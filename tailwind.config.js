@@ -3,7 +3,13 @@ module.exports = {
     './src/**/*.{ts,tsx,js,jsx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        noto: ["Noto Sans JP"],
+        dancing: ["Dancing Script"],
+        alliance : ["alliance-black"],
+      },
+    },
   },
   plugins: [],
   important: true,
