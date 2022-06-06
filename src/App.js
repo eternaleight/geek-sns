@@ -1,12 +1,13 @@
 import '../src/App.scss'
-function App() {
+import Home from './pages/home/Home'
+
+
+const App = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        aaa
-      </header>
+      <Home/>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
