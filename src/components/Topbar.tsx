@@ -10,7 +10,7 @@ const style = {
   topbarImg: `w-24 p-[1px] transtion-[radius] bg-gradient-to-br from-pink-300 via-purple-300 to-indigo-400 duration-[.15s] parent hover:rounded-[50px] hover:cursor-pointer`,
 }
 
-const Topbar = () => {
+const Topbar:React.FC = () => {
   return (
     <div className={style.topbarContainer}>
       <div className="topbarLeft">
