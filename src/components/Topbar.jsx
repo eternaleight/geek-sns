@@ -4,7 +4,6 @@ import {
   Search,
 } from '@mui/icons-material'
 import React from 'react'
-import './Topbar.scss'
 
 const style = {
   topbarContainer: `bg-[#010103] flex w-full`,
