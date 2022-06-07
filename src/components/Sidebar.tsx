@@ -77,7 +77,7 @@ const Sidebar: React.FC = () => (
             <img
               src="/assets/person/2.jpeg"
               alt=""
-              className="m-auto w-[98vw] h-[20rem] mt-2 sidebarFriendImg"
+              className="m-auto w-full h-[20rem] mt-2 sidebarFriendImg"
             />
             <span className="sidebarFriendName">eternaleight</span>
           </li>
