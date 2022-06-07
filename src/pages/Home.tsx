@@ -8,7 +8,7 @@ const Home: React.FC = () => {
   return (
     <>
       <Topbar />
-    <div className=''>
+    <div className='flex flex-col'>
       <Sidebar />
       {/* <Timeline /> */}
       {/* <Rightbar /> */}
