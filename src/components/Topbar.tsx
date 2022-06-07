@@ -7,7 +7,8 @@ import React from 'react'
 
 const style = {
   topbarContainer: `bg-[#010103] flex w-full items-center sticky top-0 z-50`,
-  topbarImg: `w-24 m-1 p-[1px] transtion-[radius] bg-gradient-to-br from-pink-300 via-purple-300 to-indigo-400 duration-[.15s] parent rounded-[50px] hover:rounded-[12px] hover:cursor-pointer`,
+  topbarImg: `w-24 m-1 p-[1px] transtion-[radius] bg-slate-200 to-gray-400 duration-[.15s] parent rounded-[50px] hover:cursor-pointer`,
+  topbarIconBadge: `flex items-center w-[1rem] h-[1rem] bg-gradient-to-br from-red-800 via-red-700 to-red-400 rounded-full justify-center topbarIconBadge`
 }
 
 const Topbar: React.FC = () => {
@@ -32,10 +33,10 @@ const Topbar: React.FC = () => {
           <div className="topbarIconItem">
           <div className="pt-2">
           </div>
-            <Chat className="hover:text-blue-500 transition hover:cursor-pointer" />
-            <span className="topbarIconBadge">1</span>
-          <Notifications className="hover:text-blue-500 transition hover:cursor-pointer" />
-          <span className="topbarIconBadge">2</span>
+            <Chat className="hover:text-blue-500 transition hover:cursor-pointer hover:scale-[1.2]" />
+            <span className={style.topbarIconBadge}>1</span>
+            <Notifications className="hover:text-blue-500 transition hover:scale-[1.2] hover:cursor-pointer" />
+          <span className={style.topbarIconBadge}>2</span>
       </div>
       <img
         src="/assets/person/1.jpeg"
