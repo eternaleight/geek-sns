@@ -1,13 +1,18 @@
 import React from 'react'
 import Topbar from '../components/Topbar'
+import Rightbar from '../components/Rightbar'
+import Sidebar from '../components/Sidebar'
+import Timeline from '../components/Timeline'
 
-const Home:React.FC = () => {
+const Home: React.FC = () => {
   return (
     <>
       <Topbar />
-      {/* sidebar */}
-      {/* timeline */}
-      {/* rightbar */}
+    <div className=''>
+      <Sidebar />
+      {/* <Timeline /> */}
+      {/* <Rightbar /> */}
+    </div>
     </>
   )
 }
