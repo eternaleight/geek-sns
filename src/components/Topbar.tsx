@@ -19,10 +19,10 @@ const Topbar: React.FC = () => {
       </div>
       <div className="relative top-[20pd]topbarCenter flex flex-[5]">
         <div className=" h-[30px] rounded-[2px] flex bg-white items-cernter searchbar">
-          <Search className="searchIcon mt-[6px] text-[20px] w-[30px]" />
+          <Search className="searchIcon max-xs:w-0 mt-[6px] text-[20px] w-[30px]" />
           <input
             type="text"
-            className="searchInput w-[80%] focus:outline-none text-black"
+            className="searchInput max-xs:w-0 w-[80%] focus:outline-none text-black"
             placeholder="検索"
           />
         </div>
