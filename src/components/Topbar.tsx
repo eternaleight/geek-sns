@@ -7,7 +7,7 @@ import React from 'react'
 
 const style = {
   topbarContainer: `bg-[#010103] flex w-full items-center sticky top-0 z-50`,
-  topbarImg: `w-24 m-1 p-[1px] transtion-[radius] bg-slate-200 to-gray-400 duration-[.15s] parent rounded-[50px] hover:cursor-pointer`,
+  topbarImg: `w-24 m-1 p-[1px] transtion-[radius] to-gray-400 duration-[.15s] parent rounded-[50px] hover:cursor-pointer`,
   topbarIconBadge: `flex items-center w-[1rem] h-[1rem] bg-gradient-to-br from-red-800 via-red-700 to-red-400 rounded-full justify-center topbarIconBadge`
 }
 
