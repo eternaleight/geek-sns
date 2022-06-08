@@ -3,7 +3,7 @@ import {
   Notifications,
   Search,
 } from '@mui/icons-material'
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 
 const style = {
   topbarContainerBlur: `backdrop-blur duration-700 bg-[#161B2100] flex w-full items-center sticky top-0 z-50`,
@@ -15,20 +15,24 @@ const Topbar: React.FC = () => {
   const [show, handleShow] = useState<boolean>(false)
 
   const transitionNavBar = () => {
-    if (window.scrollY > 10) {
-      handleShow(true);
-    } else {
-      handleShow(false);
-    }
-  };
+    if (window.scrollY < 10) return handleShow(false)
+    return handleShow(true)
+  }
 
   useEffect(() => {
-    window.addEventListener("scroll", transitionNavBar);
-    return () => window.removeEventListener("scroll", transitionNavBar);
-  }, []);
+    window.addEventListener('scroll', transitionNavBar)
+    return () =>
+      window.removeEventListener('scroll', transitionNavBar)
+  }, [])
 
   return (
-    <div className={show ? style.topbarContainerBlur : style.topbarContainer}>
+    <div
+      className={
+        show
+          ? style.topbarContainerBlur
+          : style.topbarContainer
+      }
+    >
       <div className="topbarLeft flex-[3]">
         <span className="absolute ml-5 text-2xl font-bold top-[18px] font-alliance logo">
           Sns-App
