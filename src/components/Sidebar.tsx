@@ -10,7 +10,7 @@ import {
 const style = {
   sidebarWrapper: `p-[20px]`,
   sidebarList: ``,
-  sidebarListItem: `bg-neutral-900 border-[0.9px] border-slate-400 flex w-[10rem] items-center mb-[10px] px-[6px] py-[4px] cursor-pointer shadow-[2px_2px_3px_-3px_#b0b5b5aa] hover:shadow-none  rounded-[4px] hover:rounded-[20px] duration-[.15s]`,
+  sidebarListItem: `hover:bg-[#2F363C] bg-[#161B21] border-[0.9px] border-[#40474E] flex w-[10rem] items-center mb-[10px] px-[6px] py-[4px] cursor-pointer shadow-[2px_2px_3px_-3px_#b0b5b5aa] hover:shadow-none  rounded-[4px] hover:rounded-[20px] duration-[.15s]`,
   sidebarListIcon: ``,
   sidebarListText: ``,
 }
