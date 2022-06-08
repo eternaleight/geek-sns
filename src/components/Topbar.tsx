@@ -13,7 +13,7 @@ const Topbar: React.FC = () => {
   return (
     <div className="topbarContainer bg-[#010103] flex w-full items-center sticky top-0 z-50">
       <div className="topbarLeft flex-[3]">
-        <span className="absolute mt-1 ml-1 text-2xl font-bold top-[26px] font-alliance logo">
+        <span className="absolute ml-1 text-2xl font-bold top-[18px] font-alliance logo">
           Sns-App
         </span>
       </div>
@@ -40,7 +40,7 @@ const Topbar: React.FC = () => {
         <img
           src="/assets/person/1.jpeg"
           alt=""
-          className="topbarImg w-20 h-20 m-1 mr-1 p-[1px] transtion-[radius] to-gray-400 duration-[.15s] parent rounded-[50px] hover:cursor-pointer"
+          className="topbarImg w-14 h-14 m-1 mr-1 p-[1px] transtion-[radius] to-gray-400 duration-[.15s] parent rounded-[50px] hover:cursor-pointer"
         />
       </div>
     </div>

@@ -1,4 +1,4 @@
 const Rightbar:React.FC = () => (
-  <div>Rightbar</div>
+  <div className='flex-[2.5]'>Rightbar</div>
 ) 
 export default Rightbar

@@ -8,10 +8,10 @@ const Home: React.FC = () => {
   return (
     <>
       <Topbar />
-    <div className='flex flex-col'>
+    <div className='flex'>
       <Sidebar />
-      {/* <Timeline /> */}
-      {/* <Rightbar /> */}
+      <Timeline />
+      <Rightbar />
     </div>
     </>
   )
