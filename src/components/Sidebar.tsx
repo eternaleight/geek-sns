@@ -10,9 +10,10 @@ import {
 const style = {
   sidebarWrapper: `p-[20px]`,
   sidebarList: ``,
-  sidebarListItem: `hover:bg-zinc-800 bg-zinc-900 border-[0.9px] border-zinc-400 flex w-[10rem] items-center mb-[10px] px-[6px] py-[4px] cursor-pointer shadow-[2px_2px_3px_-3px_#b0b5b5aa] hover:shadow-none  rounded-[4px] hover:rounded-[20px] duration-[.15s]`,
-  sidebarListIcon: ``,
-  sidebarListText: ``,
+  sidebarListItem: `text-center bg-[#202023] border-[0.9px] hover:border-[0.9px] border-zinc-400 flex w-[10rem] items-center mb-[10px] px-[6px] py-[4px] cursor-pointer  hover:shadow-none rounded-[20px] hover:rounded-[0px] hover:border-zinc-400 duration-[.15s] Btn `,
+  sidebarListIcon: `absolute left-[5px]`,
+  sidebarListText: `ml-7 Btn-Text`,
+  transparent: `Btn-Text content-[""] after:bg-transparent after:w-[100%]`,
 }
 
 const Sidebar: React.FC = () => (
@@ -20,40 +21,46 @@ const Sidebar: React.FC = () => (
     <div className={style.sidebarWrapper}>
       <ul className={style.sidebarList}>
         <li className={style.sidebarListItem}>
-          <Home className={style.sidebarListIcon} />
           <span className={style.sidebarListText}>
+            <div className={style.transparent}></div>
+            <Home className={style.sidebarListIcon} />
             ホーム
           </span>
         </li>
         <li className={style.sidebarListItem}>
-          <Search className={style.sidebarListIcon} />
           <span className={style.sidebarListText}>
+            <div className={style.transparent}></div>
+            <Search className={style.sidebarListIcon} />
             検索
           </span>
         </li>
         <li className={style.sidebarListItem}>
-          <Notifications
-            className={style.sidebarListIcon}
-          />
           <span className={style.sidebarListText}>
+            <div className={style.transparent}></div>
+            <Notifications
+              className={style.sidebarListIcon}
+            />
             通知
           </span>
         </li>
         <li className={style.sidebarListItem}>
-          <Bookmark className={style.sidebarListIcon} />
           <span className={style.sidebarListText}>
+            <div className={style.transparent}></div>
+            <Bookmark className={style.sidebarListIcon} />
             ブックマーク
           </span>
         </li>
         <li className={style.sidebarListItem}>
-          <Person className={style.sidebarListIcon} />
           <span className={style.sidebarListText}>
+            <div className={style.transparent}></div>
+            <Person className={style.sidebarListIcon} />
             プロフィール
           </span>
         </li>
         <li className={style.sidebarListItem}>
-          <Settings className={style.sidebarListIcon} />
           <span className={style.sidebarListText}>
+            <div className={style.transparent}></div>
+            <Settings className={style.sidebarListIcon} />
             設定
           </span>
         </li>
