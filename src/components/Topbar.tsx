@@ -7,7 +7,7 @@ import React, { useState, useEffect } from 'react'
 
 const style = {
   topbarContainerBlur: `backdrop-blur duration-700 bg-[#161B2100] flex w-full items-center sticky top-0 z-50`,
-  topbarContainer: `backdrop-blur bg-[#161B21] flex w-full items-center duration-700 sticky top-0 z-50`,
+  topbarContainer: `backdrop-blur bg-zinc-900 flex w-full items-center duration-700 sticky top-0 z-50`,
   topbarIconBadge: `flex items-center w-[1rem] h-[1rem] bg-gradient-to-br from-red-800 via-red-700 to-red-400 rounded-full justify-center topbarIconBadge`,
 }
 
@@ -38,8 +38,8 @@ const Topbar: React.FC = () => {
           Sns-App
         </span>
       </div>
-      <div className="relative top-[20pd]topbarCenter flex flex-[5]">
-        <div className=" h-[30px] rounded-[2px] flex bg-white items-cernter searchbar">
+      <div className="topbarCenter flex flex-[5]">
+        <div className="h-[30px] rounded-[2px] flex bg-white items-cernter searchbar">
           <Search className="searchIcon max-xs:w-0 mt-[6px] text-[20px] w-[30px]" />
           <input
             type="text"
