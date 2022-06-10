@@ -6,7 +6,7 @@ import {
 import React, { useState, useEffect } from 'react'
 
 const style = {
-  topbarContainerBlur: `backdrop-blur furation-700 bg-[#161B2100] flex w-full items-center sticky top-0 z-50`,
+  topbarContainerBlur: `backdrop-blur duration-700 bg-[#161B2100] flex w-full items-center sticky top-0 z-50`,
   topbarContainer: `backdrop-blur bg-zinc-900 flex w-full items-center duration-700 sticky top-0 z-50`,
   topbarIconBadge: `flex items-center w-[1rem] h-[1rem] bg-gradient-to-br from-red-800 via-red-700 to-red-400 rounded-full justify-center topbarIconBadge`,
 }

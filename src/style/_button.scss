@@ -1,3 +1,7 @@
+$easeInOutQuart: cubic-bezier(0.77, 0.2, 0.05, 1);
+$easeInBack: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+$easeOutQuint: cubic-bezier(0.23, 1, 0.32, 1);
+
 .Btn{
   position: relative;
 }
@@ -40,14 +44,14 @@
 @keyframes rounded-reverse 
 {
   0% {
-    border-radius: 20px;
-    background: #333;
-  }
-  70% {
+    background: #f99;
     background: transparent;
   }
+  7% {
+    background: transparent;
+    background: #778;
+  }
   100% {
-    border-radius: 20px;
     background: transparent;
   }
 }
