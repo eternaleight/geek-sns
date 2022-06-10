@@ -2,23 +2,31 @@ import { MoreVert } from '@mui/icons-material'
 
 const Post = () => {
   return (
-    <div className="post w-full max-xs:h-[150px] h-[170px] shadow-[3px_7px_13px_-10px_#65789f] rounded-[10px]">
+    <div className="post w-full border-[0.9px] border-gray-500 h-full shadow-[3px_7px_13px_-22px] rounded-[10px]">
       <div className="postWrapper p-[10px]">
-        <div className="postTop">
-          <img
-            src="./assets/person/1.jpg"
-            alt=""
-            className="postProfileInput"
-          />
-          <span className="postUserName">eternaleight</span>
-          <span className="postData">5分前</span>
+        <div className="flex justify-center justify-between postTop">
+          <div className="flex items-center postTopLeft">
+            <img
+              src="./assets/person/1.jpeg"
+              alt=""
+              className="postProfileImg w-[32px] h-[32px] rounded-full object-cover"
+            />
+            <span className="postUserName text-[15px] font-semibold mx-[10px]">
+              eternaleight
+            </span>
+            <span className="postData">5分前</span>
+          </div>
         </div>
-        <div className="postRight">
+        <div className="postTopRight">
           <MoreVert />
         </div>
         <div className="postCenter">
           <span className="postText">SNS</span>
-          <img className="postImg" src="./assets/post/1.jpg" alt="" />
+          <img
+            className="postImg"
+            src="./assets/post/3.png"
+            alt=""
+          />
         </div>
         <div className="postBottom">
           <div className="postBottomLeft">

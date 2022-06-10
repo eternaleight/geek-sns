@@ -6,14 +6,14 @@ import {
 } from '@mui/icons-material'
 
 const style = {
-  share: `w-full max-xs:h-[150px] h-[170px] shadow-[3px_7px_13px_-10px_#65789f] rounded-[10px]`,
+  share: `border-[0.9px] border-gray-500 w-full max-xs:h-[150px] h-[170px] shadow-[3px_7px_13px_-22px] mb-2 rounded-[10px]`,
   shareWrapper: `p-[10px]`,
   shareTop: `flex items-center`,
-  shareInput: `w-[80%] border-none w-full focus:outline-none`,
+  shareInput: ` border-none w-full focus:outline-none text-white bg-[#202023]`,
   shareHr: `m-[20px]`,
   shareButtons: `flex justify-between`,
   shareOptions: `flex xs:ml-[10px] items-center` ,
-  shareOptionText: `flex items-center mr-[15px] max-md:text-[clamp(12px,2vw,14px)] max-xs:text-[12px] cursor-pointer font-bold`,
+  shareOptionText: `flex items-center mr-[15px] max-md:text-[14px] max-xs:text-[12px] cursor-pointer font-bold`,
   shareIcon: `mr-[3px] max-xs:w-[20px]`,
   shareButton: `text-[14px] py-[6px] max-xs:px-[12px] px-[17px] bg-zinc-900 rounded-[5px]`,
 }
