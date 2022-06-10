@@ -1,4 +1,4 @@
-import { MoreVert } from '@mui/icons-material'
+import { Favorite, MoreVert } from '@mui/icons-material'
 
 const Post = () => {
   return (
@@ -9,32 +9,28 @@ const Post = () => {
             <img
               src="./assets/person/1.jpeg"
               alt=""
-              className="postProfileImg w-[32px] h-[32px] rounded-full object-cover"
+              className="hover:opacity-[0.85] cursor-pointer duration-[0.15s] ease-out postProfileImg w-[32px] h-[32px] rounded-full object-cover"
             />
             <span className="postUserName text-[15px] font-semibold mx-[10px]">
               eternaleight
             </span>
-            <span className="postData">5分前</span>
+            <span className="postData text-[12px]">5分前</span>
           </div>
-        </div>
         <div className="postTopRight">
           <MoreVert />
         </div>
-        <div className="postCenter">
+        </div>
+        <div className="postCenter mx-[20px]">
           <span className="postText">SNS</span>
           <img
-            className="postImg"
+            className="postImg mt-[20px] w-full max-h-[500px] object-cover"
             src="./assets/post/3.png"
             alt=""
           />
         </div>
-        <div className="postBottom">
-          <div className="postBottomLeft">
-            <img
-              src="./assets/heart.png"
-              alt=""
-              className="likeIcon"
-            />
+        <div className="flex items-center justify-between postBottom">
+          <div className="flex postBottomLeft">
+            <Favorite className='text-[#F61980] w-[20px]'/>
             <span className="postLikeCounter">
               5人がいいねを押しました
             </span>
