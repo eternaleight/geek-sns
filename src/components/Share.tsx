@@ -6,16 +6,16 @@ import {
 } from '@mui/icons-material'
 
 const style = {
-  share: `w-full h-[170px] shadow-[3px_7px_13px_-10px_#65789f] rounded-[10px]`,
+  share: `w-full max-xs:h-[150px] h-[170px] shadow-[3px_7px_13px_-10px_#65789f] rounded-[10px]`,
   shareWrapper: `p-[10px]`,
   shareTop: `flex items-center`,
-  shareInput: `border-none w-full focus:outline-none`,
+  shareInput: `w-[80%] border-none w-full focus:outline-none`,
   shareHr: `m-[20px]`,
   shareButtons: `flex justify-between`,
-  shareOptions: `flex ml-[20px] items-center` ,
-  shareOptionText: `flex items-center mr-[15px] cursor-pointer font-bold`,
-  shareIcon: `mr-[3px]`,
-  shareButton: `text-[14px] py-[6px] px-[17px] bg-zinc-900 rounded-[5px]`,
+  shareOptions: `flex xs:ml-[20px] items-center` ,
+  shareOptionText: `flex items-center mr-[15px] max-xs:text-[12px] cursor-pointer font-bold`,
+  shareIcon: `mr-[3px] max-xs:w-[20px]`,
+  shareButton: `text-[14px] py-[6px] max-xs:px-[12px] px-[17px] bg-zinc-900 rounded-[5px]`,
 }
 
 const Share = () => {
