@@ -5,11 +5,12 @@ module.exports = {
   theme: {
     extend: {
       screens: {
+        'md': '893px',
         'xs': '560px',
         'xxs': '378px',
         'max-xl': {'max': '1279px'},
         'max-lg': {'max': '1023px'},
-        'max-md': {'max': '767px'},
+        'max-md': {'max': '892px'},
         'max-sm': {'max': '639px'},
         'max-xs': {'max': '559px'},
         'max-xxs': {'max': '377px'},

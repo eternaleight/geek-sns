@@ -12,8 +12,8 @@ const style = {
   shareInput: `w-[80%] border-none w-full focus:outline-none`,
   shareHr: `m-[20px]`,
   shareButtons: `flex justify-between`,
-  shareOptions: `flex xs:ml-[20px] items-center` ,
-  shareOptionText: `flex items-center mr-[15px] max-xs:text-[12px] cursor-pointer font-bold`,
+  shareOptions: `flex xs:ml-[10px] items-center` ,
+  shareOptionText: `flex items-center mr-[15px] max-md:text-[clamp(12px,2vw,14px)] max-xs:text-[12px] cursor-pointer font-bold`,
   shareIcon: `mr-[3px] max-xs:w-[20px]`,
   shareButton: `text-[14px] py-[6px] max-xs:px-[12px] px-[17px] bg-zinc-900 rounded-[5px]`,
 }
