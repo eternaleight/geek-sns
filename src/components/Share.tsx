@@ -13,7 +13,7 @@ const style = {
   shareHr: `m-[20px]`,
   shareButtons: `flex justify-between`,
   shareOptions: `flex ml-[20px] items-center` ,
-  shareOptionText: `flex items-center mr-[15px] cursor-pointer font-bold font-noto`,
+  shareOptionText: `flex items-center mr-[15px] cursor-pointer font-bold`,
   shareIcon: `mr-[3px]`,
   shareButton: `text-[14px] py-[6px] px-[17px] bg-zinc-900 rounded-[5px]`,
 }
