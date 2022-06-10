@@ -14,7 +14,7 @@ const style = {
   shareButtons: `flex justify-between`,
   shareOptions: `flex xs:ml-[10px] items-center`,
   shareOptionText: `flex items-center mr-[15px] max-md:text-[14px] max-xs:text-[12px] cursor-pointer font-bold`,
-  shareOptionText2: `delay-200 flex items-center mr-[15px] text-[12px] max-xs:text-[10px] cursor-pointer mediaButton2 absolute bg-[#33415599]  w-[28px] justify-center h-[20px] rounded-[2px] top-7 left-1 `,
+  shareOptionText2: `delay-200 flex items-center mr-[15px] text-[12px] max-xs:text-[10px] cursor-default mediaButton2 absolute bg-[#33415599]  w-[28px] justify-center h-[20px] rounded-[2px] top-7 left-1 `,
   mediaDiv: `absolute top-0 left-[-26px] w-[78px] cursor-pointer h-[24px] bg-[#00000000] mediaButton`,
   shareIcon: `mr-[3px] max-xs:w-[20px] cursor-pointer`,
   shareButton: `mediaButton text-[14px] py-[6px] max-xs:px-[12px] px-[17px] bg-zinc-900 rounded-[5px]`,
