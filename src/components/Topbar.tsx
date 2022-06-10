@@ -52,9 +52,10 @@ const Topbar: React.FC = () => {
         <div className="topbarIconItem">
           <div className="pt-[2rem]"></div>
           <div className="flex">
-            <Chat className="hover:text-blue-500 transition hover:cursor-pointer hover:scale-[1.2]" />
+            <div className="groupButton w-[24px] h-[25px] bg-transparent cursor-pointer left-[23px] relative bg-white"></div>
+            <Chat className="cursor-pointer upAnime hover:text-blue-500 transition" />
             <span className={style.topbarIconBadge}>1</span>
-            <Notifications className="hover:text-blue-500 transition hover:scale-[1.2] hover:cursor-pointer" />
+            <Notifications className="cursor-pointer buruburuAnime hover:text-blue-500 transition" />
             <span className={style.topbarIconBadge}>2</span>
           </div>
         </div>
