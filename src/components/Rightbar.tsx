@@ -7,7 +7,7 @@ const style = {
   rightbarOnline: `bg-[#2776F2] absolute w-[14px] h-[14px] rounded-full top-[27px] left-[27px] border-[#202023] border-[2.5px]`,
   rightbarUserName: ``,
   promotionTitle: `text-[18px] font-[600] mb-[10px]`,
-  promotionName: `text-[18px] font-[300] text-[#666B73] mt-[-20px]`,
+  promotionName: `text-[18px] font-[300] text-[#999ea6] mt-[-20px]`,
   promotionTitleImg: `rounded-[10px] w-[85%] my-[25px]`,
 }
 const Rightbar: React.FC = () => (
