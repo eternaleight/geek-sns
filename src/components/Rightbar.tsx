@@ -8,7 +8,7 @@ const style = {
   rightbarUserName: ``,
   promotionTitle: `text-[18px] font-[600] mb-[10px]`,
   promotionName: `text-[18px] font-[300] text-[#999ea6] mt-[-20px]`,
-  promotionTitleImg: `rounded-[10px] w-[85%] my-[25px]`,
+  promotionTitleImg: `rounded-[10px] w-[85%] cursor-pointer my-[25px]`,
 }
 const Rightbar: React.FC = () => (
   <div className="flex-[2.5] rightbar">
@@ -56,31 +56,47 @@ const Rightbar: React.FC = () => (
         </li>
       </ul>
       <p className={style.promotionTitle}>
-        プロモーション広告
+        プロモーション
       </p>
+      <a href="https://high-speed-holodule.vercel.app/" target="_blank">
       <img
         className={style.promotionTitleImg}
         alt=""
-        src="assets/post/hakusan-bubble-01.png"
+        src="assets/post/high-speed-holodule.png"
       />
+      </a>
       <p className={`${style.promotionName}`}>
-        ショッピング
+        high-speed-holodule
       </p>
+      <a href="https://github.com/eternaleight/bubblegum-colorscheme" target="_blank">
+        <img
+          className={style.promotionTitleImg}
+          alt=""
+          src="assets/post/hakusan-bubble-01.png"
+        />
+      </a>
+      <p className={`${style.promotionName}`}>
+        vim/nvim用カラースキーム　bubblegum-colorscheme
+      </p>
+      <a href="https://www.youtube.com/channel/UCg4XFdvhe7Zvttz4yZLh33A" target="_blank">
       <img
         className={style.promotionTitleImg}
         alt=""
-        src="assets/post/hakusan-bubble-01.png"
+        src="assets/post/initialcommit01.png"
       />
+      </a>
       <p className={`${style.promotionName}`}>
-        カーショップ
+        initial commit (youtube)
       </p>
+      <a href="https://type-block.vercel.app/" target="_blank">
       <img
         className={style.promotionTitleImg}
         alt=""
-        src="assets/post/hakusan-bubble-01.png"
+        src="assets/post/type-block.gif"
       />
+      </a>
       <p className={`${style.promotionName}`}>
-        ETERNAL EIGHT株式会社
+        blockBreak/web版 (typescript)
       </p>
     </div>
   </div>
