@@ -23,7 +23,7 @@ const Post = () => {
         <div className="postCenter mx-[20px]">
           <span className="postText">SNS</span>
           <img
-            className="postImg mt-[20px] w-full max-h-[500px] object-cover"
+            className="postImg my-[20px] w-full max-h-[500px] object-contain"
             src="./assets/post/3.png"
             alt=""
           />
@@ -31,12 +31,12 @@ const Post = () => {
         <div className="flex items-center justify-between postBottom">
           <div className="flex postBottomLeft">
             <Favorite className='text-[#F61980] w-[20px]'/>
-            <span className="postLikeCounter">
+            <span className="postLikeCounter text-[15px]">
               5人がいいねを押しました
             </span>
           </div>
           <div className="postBottomRight">
-            <span className="postConmmentText">
+            <span className="postCommentText cursor-pointer border-b-[0.9px] border-gray-500 text-[15px] mr-[3px]">
               4:コメント
             </span>
           </div>
