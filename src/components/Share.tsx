@@ -3,6 +3,7 @@ import {
   Face,
   Gif,
   Image,
+  SentimentVerySatisfied,
 } from '@mui/icons-material'
 
 const style = {
@@ -75,7 +76,7 @@ const Share = () => {
               </div>
             </div>
             <div className={style.shareOptions}>
-              <Face className={style.shareIcon} />
+              <SentimentVerySatisfied className={style.shareIcon} />
               <div className="relative flex flex-col">
                 <span className={style.shareOptionText}>
                   Emoji

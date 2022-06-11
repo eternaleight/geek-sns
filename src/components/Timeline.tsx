@@ -7,6 +7,8 @@ const Timeline: React.FC = () => {
       <div className="timelineWrapper p-[20px]">
         <Share />
         <Post />
+        <Post />
+        <Post />
       </div>
     </div>
   )
