@@ -8,7 +8,7 @@ const style = {
   rightbarUserName: ``,
   promotionTitle: `text-[18px] font-[600] mb-[10px]`,
   promotionName: `text-[18px] font-[300] text-[#999ea6] mt-[-20px]`,
-  promotionTitleImg: `rounded-[10px] w-[85%] cursor-pointer my-[25px]`,
+  promotionTitleImg: `w-[85%] rounded-[10px]  cursor-pointer my-[25px]`,
 }
 const Rightbar: React.FC = () => (
   <div className="flex-[2.5] rightbar">
@@ -87,16 +87,6 @@ const Rightbar: React.FC = () => (
       </a>
       <p className={`${style.promotionName}`}>
         initial commit (youtube)
-      </p>
-      <a href="https://type-block.vercel.app/" target="_blank">
-      <img
-        className={style.promotionTitleImg}
-        alt=""
-        src="assets/post/type-block.gif"
-      />
-      </a>
-      <p className={`${style.promotionName}`}>
-        blockBreak/web版 (typescript)
       </p>
     </div>
   </div>
