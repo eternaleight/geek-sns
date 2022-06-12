@@ -83,7 +83,7 @@ const Share = () => {
                 </span>
                 <div className={style.mediaDiv}></div>
                 <span
-                  className={`${style.shareOptionText2} w-[40px] left-[-2px]`}
+                  className={`${style.shareOptionText2} w-[43px] left-[-2px]`}
                 >
                   絵文字
                 </span>
