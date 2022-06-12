@@ -71,7 +71,7 @@ const Sidebar: React.FC = () => (
           <img
             src="/assets/person/2.jpeg"
             alt=""
-            className="w-[3rem] h-[3rem] rounded-full mt-2 sidebarFriendImg"
+            className="hover:opacity-[0.85] cursor-pointer duration-[0.15s] w-[3rem] h-[3rem] rounded-full mt-2 sidebarFriendImg"
           />
           <span className="sidebarFriendName">
             eternaleight

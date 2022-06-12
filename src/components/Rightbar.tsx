@@ -8,7 +8,7 @@ const style = {
   rightbarUserName: ``,
   promotionTitle: `text-[18px] font-[600] mb-[10px]`,
   promotionName: `text-[18px] font-[300] text-[#999ea6] mt-[-20px]`,
-  promotionTitleImg: `w-[85%] rounded-[10px]  cursor-pointer my-[25px]`,
+  promotionTitleImg: `duration-500 card w-[300px] h-[250px] rounded-[10px] object-cover cursor-pointer my-[25px]`,
 }
 const Rightbar: React.FC = () => (
   <div className="flex-[2.5] rightbar">
@@ -56,37 +56,42 @@ const Rightbar: React.FC = () => (
         </li>
       </ul>
       <p className={style.promotionTitle}>
-        プロモーション
       </p>
       <a href="https://high-speed-holodule.vercel.app/" target="_blank">
+        <div className='card-box'>
       <img
         className={style.promotionTitleImg}
         alt=""
         src="assets/post/high-speed-holodule.png"
       />
+          <div className='caption'>high-speed-holodule</div>
+        </div>
       </a>
       <p className={`${style.promotionName}`}>
-        high-speed-holodule
       </p>
       <a href="https://github.com/eternaleight/bubblegum-colorscheme" target="_blank">
+        <div className='card-box'>
         <img
           className={style.promotionTitleImg}
           alt=""
           src="assets/post/hakusan-bubble-01.png"
         />
+          <div className='caption'>bubblegum-colorscheme</div>
+        </div>
       </a>
       <p className={`${style.promotionName}`}>
-        vim/nvim用カラースキーム　bubblegum-colorscheme
       </p>
       <a href="https://www.youtube.com/channel/UCg4XFdvhe7Zvttz4yZLh33A" target="_blank">
+        <div className='card-box'>
       <img
         className={style.promotionTitleImg}
         alt=""
         src="assets/post/initialcommit01.png"
       />
+          <div className='caption'>initial commit</div>
+        </div>
       </a>
       <p className={`${style.promotionName}`}>
-        initial commit (youtube)
       </p>
     </div>
   </div>

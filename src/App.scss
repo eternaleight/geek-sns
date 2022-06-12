@@ -1,27 +1,20 @@
 @import url('http://fonts.googleapis.com/earlyaccess/notosansjp.css');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
-@import url("https://www.dafontfree.net/embed/YWxsaWFuY2UtYmxhY2smZGF0YS8zOS9hLzExMDg3My9hbGxpYW5jZWJsYWNrLnR0Zg");
-
+@import url('https://www.dafontfree.net/embed/YWxsaWFuY2UtYmxhY2smZGF0YS8zOS9hLzExMDg3My9hbGxpYW5jZWJsYWNrLnR0Zg');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import "./style/_sidebarButton";
-@import "./style/_topbarIcon";
-
+@import './style/_sidebarButton';
+@import './style/_topbarIcon';
+@import './style/_shareButton';
+@import './style/_rightbarCard';
 
 body {
-  font-family: "noto sans jp" , sans-serif;
+  font-family: 'noto sans jp', sans-serif;
   color: #f0f0f8;
   background-color: #202023;
 }
 
 input {
   color: #000;
-}
-
-.mediaButton:hover + .mediaButton2 {
-  opacity:1;
-}
-.mediaButton2 {
-  opacity:0;
 }

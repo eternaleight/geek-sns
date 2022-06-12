@@ -1,5 +1,6 @@
 import { Favorite, MoreVert } from '@mui/icons-material'
 import { useCallback, useEffect } from 'react'
+import { Users } from '../Posts/dummydata'
 
 type PostsArray = {
   id?: number
