@@ -30,7 +30,6 @@ export const Posts = [
   {
     id: 1,
     desc: "post",
-    photo: "/post/1.jpeg",
     date: "5分前",
     userId: 1,
     like: 2,
@@ -48,7 +47,6 @@ export const Posts = [
   {
     id: 3,
     desc: "nvim",
-    photo: "/post/3.jpeg",
     date: "10分前",
     userId: 3,
     like: 23,
@@ -57,7 +55,6 @@ export const Posts = [
   {
     id: 4,
     desc: "next.js",
-    photo: "/post/4.jpeg",
     date: "1分前",
     userId: 4,
     like: 10,
@@ -66,7 +63,6 @@ export const Posts = [
   {
     id: 5,
     desc: "tmux",
-    photo: "/post/5.jpeg",
     date: "1分前",
     userId: 5,
     like: 18,
