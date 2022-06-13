@@ -11,7 +11,7 @@ const App: React.FC = () => {
   return (
     <div className="App">
       <div onClick={() => Button()} className='sticky top-0 text-center cursor-pointer bg-zinc-800'>Change</div>
-      {button ? <Home /> : <Profile />}
+      {button ? <Home button={button}/> : <Profile />}
     </div>
   )
 }

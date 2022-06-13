@@ -29,7 +29,7 @@ const Online: React.FC<Props> = ({ user }) => {
           <span className={style.rightbarOnline}></span>
         </div>
         <span className={style.rightbarUserName}>
-          Ryoya Itabashi
+          {user.username}
         </span>
       </li>
     </>
