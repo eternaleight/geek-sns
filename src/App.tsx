@@ -4,7 +4,7 @@ import Home from './pages/Home'
 import Profile from './pages/Profile'
 
 const App: React.FC = () => {
-  const [button, setButton] = useState<boolean>(true)
+  const [button, setButton] = useState<boolean>(false)
   const Button = () => {
     setButton(!button)
   }

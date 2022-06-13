@@ -23,21 +23,25 @@ const Profile: React.FC = () => {
                 className="absolute top-[150px] left-0 right-0 object-cover w-[130px] m-auto rounded-full p-3 border-[#202023] profileUserImg border-[1px]"
               />
             </div>
-            <div className='flex flex-col items-center'>
-            <h2 className="font-bold text-[50px] titileName">Ryoya Itabashi</h2>
-            <div className="profileInfo">
-              <h4 className="profileInfoName">
-                eternaleight
-              </h4>
-              <span className="relative left-[-4px] profileInfoDesc">
-                個人開発/nvim
-              </span>
-            </div>
+            <div className="flex flex-col items-center">
+              <h2 className="font-bold text-[50px] titileName">
+                Ryoya Itabashi
+              </h2>
+              <div className="profileInfo">
+                <h4 className="profileInfoName">
+                  eternaleight
+                </h4>
+                <span className="relative left-[-4px] profileInfoDesc">
+                  個人開発/nvim
+                </span>
+              </div>
             </div>
             <div className="profilerightBottom"></div>
           </div>
+          <div className='flex'>
           <TimeLine />
-          <Rightbar />
+          <Rightbar profile/>
+          </div>
         </div>
       </div>
     </>
