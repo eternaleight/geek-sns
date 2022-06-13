@@ -88,7 +88,7 @@ const Post: React.FC<Props> = ({ post }) => {
                 className="like cursor-pointer mb-[0px] text-zinc-500 w-[20px]"
               />
                 <div className='likeCircle'></div>
-            <span className="postLikeCounter text-[14px] mt-[1px] ml-1 font-noto">
+            <span className="postLikeCounter text-[14px] mt-[1px] ml-1">
               {likeNum}
             </span>
               </div>
