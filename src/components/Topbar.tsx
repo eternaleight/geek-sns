@@ -34,25 +34,43 @@ const Topbar: React.FC = () => {
       }
     >
       <div className="topbarLeft flex-[3]">
-        <span onClick={() => window.scrollTo(0,0)} className="absolute cursor-pointer ml-5 text-2xl font-bold top-[18px] font-sans logo">
+        <span
+          onClick={() => window.scrollTo(0, 0)}
+          className="absolute cursor-pointer ml-5 text-2xl font-bold top-[18px] font-sans logo"
+        >
           Geek-SNS
         </span>
       </div>
       <div className="topbarCenter flex flex-[5]">
-        <div className="h-[30px] rounded-[2px] flex bg-white items-cernter searchbar">
-          <Search className="searchIcon max-xs:w-0 mt-[6px] text-[20px] w-[30px]" />
-          <input
-            type="text"
-            className="searchInput max-xs:w-0 w-[80%] focus:outline-none text-black"
-            placeholder="検索"
-          />
-        </div>
+        {!show ? (
+          <>
+            <div className="bg-[#4C505C52] duration-700 h-[40px] rounded-[12px] flex  items-cernter searchbar transition-none hover:bg-[#4C505C99]">
+              <Search className="searchIcon max-xs:w-0 mt-[10px] text-[20px] w-[30px] text-gray-500" />
+              <input
+                type="text"
+                className="bg-[#00000000] searchInput max-xs:w-0 w-[80%] focus:outline-none text-gray-300"
+                placeholder="Search"
+              />
+            </div>
+          </>
+        ) : (
+          <>
+            <div className="bg-[#4C505C52] duration-700 h-[30px] rounded-[12px] flex  items-cernter searchbar transition-none hover:bg-[#4C505C99]">
+              <Search className="duration-700 searchIcon max-xs:w-0 mt-[5px] text-[20px] w-[30px] text-gray-500" />
+              <input
+                type="text"
+                className="duration-700 bg-[#00000000] searchInput max-xs:w-0 w-[80%] focus:outline-none text-gray-300"
+                placeholder="Search"
+              />
+            </div>
+          </>
+        )}
       </div>
       <div className="flex topbarRight">
         <div className="topbarIconItem">
           <div className="pt-[2rem]"></div>
           <div className="flex">
-            <div className="groupButton w-[24px] h-[25px] bg-transparent cursor-pointer left-[23px] relative bg-white"></div>
+            <div className="groupButton w-[24px] h-[25px] bg-transparent cursor-pointer left-[23px] relative bg-transparent"></div>
             <Chat className="cursor-pointer upAnime hover:text-blue-500 transition" />
             <span className={style.topbarIconBadge}>1</span>
             <Notifications className="cursor-pointer buruburuAnime hover:text-blue-500 transition" />
