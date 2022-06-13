@@ -1,4 +1,6 @@
 import { Star } from '@mui/icons-material'
+import Online from './Online'
+import { Users } from '../Posts/dummydata'
 
 const style = {
   rightbarProfileImg: `w-[40px] h-[40px] rounded-full object-cover duration-[.15s] hover:opacity-[0.85] cursor-pointer`,
@@ -10,6 +12,7 @@ const style = {
   promotionName: `text-[18px] font-[300] text-[#999ea6] mt-[-20px]`,
   promotionTitleImg: `duration-500 card w-[300px] h-[250px] rounded-[10px] object-cover cursor-pointer my-[25px]`,
 }
+
 const Rightbar: React.FC = () => (
   <div className="flex-[2.5] rightbar">
     <div className="rightbarWrapper pt-[20px] pr-[20px]">
@@ -28,19 +31,9 @@ const Rightbar: React.FC = () => (
         オンラインの友達
       </h4>
       <ul className="rightbarFriendList">
-        <li className={style.rightbarFriend}>
-          <div className={style.rightbarFriendImgContainer}>
-            <img
-              src="assets/person/1.jpeg"
-              alt=""
-              className={style.rightbarProfileImg}
-            />
-            <span className={style.rightbarOnline}></span>
-          </div>
-          <span className={style.rightbarUserName}>
-            Ryoya Itabashi
-          </span>
-        </li>
+        {Users.map((user) => (
+          <Online user={user} key={user.id} />
+        ))}
         <li className={style.rightbarFriend}>
           <div className={style.rightbarFriendImgContainer}>
             <img
@@ -55,44 +48,51 @@ const Rightbar: React.FC = () => (
           </span>
         </li>
       </ul>
-      <p className={style.promotionTitle}>
-      </p>
-      <a href="https://high-speed-holodule.vercel.app/" target="_blank">
-        <div className='card-box'>
-      <img
-        className={style.promotionTitleImg}
-        alt=""
-        src="assets/post/high-speed-holodule.png"
-      />
-          <div className='caption'>high-speed-holodule</div>
+      <p className={style.promotionTitle}></p>
+      <a
+        href="https://high-speed-holodule.vercel.app/"
+        target="_blank"
+      >
+        <div className="card-box">
+          <img
+            className={style.promotionTitleImg}
+            alt=""
+            src="assets/post/high-speed-holodule.png"
+          />
+          <div className="caption">high-speed-holodule</div>
         </div>
       </a>
-      <p className={`${style.promotionName}`}>
-      </p>
-      <a href="https://github.com/eternaleight/bubblegum-colorscheme" target="_blank">
-        <div className='card-box'>
-        <img
-          className={style.promotionTitleImg}
-          alt=""
-          src="assets/post/hakusan-bubble-01.png"
-        />
-          <div className='caption'>bubblegum-colorscheme</div>
+      <p className={`${style.promotionName}`}></p>
+      <a
+        href="https://github.com/eternaleight/bubblegum-colorscheme"
+        target="_blank"
+      >
+        <div className="card-box">
+          <img
+            className={style.promotionTitleImg}
+            alt=""
+            src="assets/post/hakusan-bubble-01.png"
+          />
+          <div className="caption">
+            bubblegum-colorscheme
+          </div>
         </div>
       </a>
-      <p className={`${style.promotionName}`}>
-      </p>
-      <a href="https://www.youtube.com/channel/UCg4XFdvhe7Zvttz4yZLh33A" target="_blank">
-        <div className='card-box'>
-      <img
-        className={style.promotionTitleImg}
-        alt=""
-        src="assets/post/initialcommit01.png"
-      />
-          <div className='caption'>initial commit</div>
+      <p className={`${style.promotionName}`}></p>
+      <a
+        href="https://www.youtube.com/channel/UCg4XFdvhe7Zvttz4yZLh33A"
+        target="_blank"
+      >
+        <div className="card-box">
+          <img
+            className={style.promotionTitleImg}
+            alt=""
+            src="assets/post/initialcommit01.png"
+          />
+          <div className="caption">initial commit</div>
         </div>
       </a>
-      <p className={`${style.promotionName}`}>
-      </p>
+      <p className={`${style.promotionName}`}></p>
     </div>
   </div>
 )

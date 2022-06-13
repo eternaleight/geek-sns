@@ -62,7 +62,7 @@ const Topbar: React.FC = () => {
         <img
           src="/assets/person/1.jpeg"
           alt=""
-          className="hover:opacity-[0.85] topbarImg w-14 h-14 m-1 mr-1 p-[1px] transtion-[radius] to-gray-400 duration-[.15s] parent rounded-[50px]  cursor-pointer"
+          className="hover:opacity-[0.85] topbarImg w-14 h-14 m-1 mr-1 p-[1px] transtion-[radius] to-gray-400 duration-[.15s] parent rounded-[50px] cursor-pointer"
         />
       </div>
     </div>

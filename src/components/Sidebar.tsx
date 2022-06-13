@@ -6,6 +6,14 @@ import {
   Search,
   Settings,
 } from '@mui/icons-material'
+import CloseFriend from './CloseFriend'
+import { Users } from '../Posts/dummydata'
+
+type UserType = {
+  id?: number
+  profilePicture?: string
+  username?: string
+}
 
 const style = {
   sidebarWrapper: `p-[20px]`,
@@ -67,16 +75,9 @@ const Sidebar: React.FC = () => (
       </ul>
       <hr className="sidebarHr mt-9" />
       <ul className="sidebarFriendList">
-        <li className="sidebarFriend">
-          <img
-            src="/assets/person/2.jpeg"
-            alt=""
-            className="hover:opacity-[0.85] cursor-pointer duration-[0.15s] w-[3rem] h-[3rem] rounded-full mt-2 sidebarFriendImg"
-          />
-          <span className="sidebarFriendName">
-            eternaleight
-          </span>
-        </li>
+        {Users.map((user: UserType) => (
+          <CloseFriend user={user} key={user.id} />
+        ))}
       </ul>
     </div>
   </div>

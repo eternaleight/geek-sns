@@ -1,0 +1,18 @@
+.like:hover + .likeCircle {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  top: -1px;
+  left: -4px;
+  background: #F6198018;
+  border-radius: 50%;
+  color: #F6198077;
+  z-index: -1;
+}
+
+.like:hover ~ .postLikeCounter {
+  color: #F61980aa;
+}
+.postLikeCounter {
+  color: #778
+}
