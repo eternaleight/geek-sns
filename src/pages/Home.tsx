@@ -9,10 +9,10 @@ type Props = {
 }
 
 const Home: React.FC<Props> = ({ button }) => {
-  const [show, handleShow] = useState<number>(769)
+  const [screenSize, setScreenSize] = useState<number>(window.innerWidth < 768 ? 767 : 769)
 
   const windowWidth = () => {
-    handleShow(window.innerWidth)
+    setScreenSize(window.innerWidth)
   }
 
   useEffect(() => {
@@ -25,7 +25,7 @@ const Home: React.FC<Props> = ({ button }) => {
     <>
       <Topbar />
       <div className="flex">
-        {(show < 768) ? (
+        {(screenSize < 768) ? (
           <Timeline />
         ) : (
           <>
