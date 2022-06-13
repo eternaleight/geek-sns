@@ -12,9 +12,9 @@ const CloseFriend: React.FC<Props> = ({ user }) => {
     <>
       <li className="sidebarFriend">
         <img
-          src="/assets/person/2.jpeg"
+          src={user.profilePicture}
           alt=""
-          className="hover:opacity-[0.85] cursor-pointer duration-[0.15s] w-[3rem] h-[3rem] rounded-full mt-2 sidebarFriendImg"
+          className="hover:opacity-[0.85] cursor-pointer duration-[0.15s] object-cover w-[3rem] h-[3rem] rounded-full mt-2 sidebarFriendImg"
         />
         <span className="sidebarFriendName">
           {user.username}

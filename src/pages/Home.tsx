@@ -4,8 +4,12 @@ import Rightbar from '../components/Rightbar'
 import Sidebar from '../components/Sidebar'
 import Timeline from '../components/Timeline'
 
-const Home: React.FC = () => {
-  const [show, handleShow] = useState<number>(0)
+type Props = {
+  button: boolean
+}
+
+const Home: React.FC<Props> = ({ button }) => {
+  const [show, handleShow] = useState<number>(769)
 
   const windowWidth = () => {
     handleShow(window.innerWidth)
@@ -21,7 +25,7 @@ const Home: React.FC = () => {
     <>
       <Topbar />
       <div className="flex">
-        {show < 768 ? (
+        {(show < 768) ? (
           <Timeline />
         ) : (
           <>
