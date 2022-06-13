@@ -13,87 +13,137 @@ const style = {
   promotionTitleImg: `duration-500 card w-[300px] h-[250px] rounded-[10px] object-cover cursor-pointer my-[25px]`,
 }
 
-const Rightbar: React.FC = () => (
-  <div className="flex-[2.5] rightbar">
-    <div className="rightbarWrapper pt-[20px] pr-[20px]">
-      <div className="flex items-center eventContainer">
-        <Star className="StarImg w-[18px] mt-[2px] mr-[3px]" />
-        <span className="eventText font-[300] text-[15px]">
-          <b>フォロワー限定</b>イベント開催予定
-        </span>
-      </div>
-      <img
-        src="assets/post/hakusan-bubble-01.png"
-        alt=""
-        className="w-full eventImg rounded-[10px] my-[25px]"
-      />
-      <h4 className="rightTItle mb-[20px]">
-        オンラインの友達
-      </h4>
-      <ul className="rightbarFriendList">
-        {Users.map((user) => (
-          <Online user={user} key={user.id} />
-        ))}
-        <li className={style.rightbarFriend}>
-          <div className={style.rightbarFriendImgContainer}>
-            <img
-              src="assets/person/2.jpeg"
-              alt=""
-              className={style.rightbarProfileImg}
-            />
-            <span className={style.rightbarOnline}></span>
-          </div>
-          <span className={style.rightbarUserName}>
-            eternaleight
+const Rightbar = ({ profile }: any) => {
+  const HomeRightBar = () => {
+    return (
+      <>
+        <div className="flex items-center eventContainer">
+          <Star className="StarImg w-[18px] mt-[2px] mr-[3px]" />
+          <span className="eventText font-[300] text-[15px]">
+            <b>フォロワー限定</b>イベント開催予定
           </span>
-        </li>
-      </ul>
-      <p className={style.promotionTitle}></p>
-      <a
-        href="https://high-speed-holodule.vercel.app/"
-        target="_blank"
-      >
-        <div className="card-box">
-          <img
-            className={style.promotionTitleImg}
-            alt=""
-            src="assets/post/high-speed-holodule.png"
-          />
-          <div className="caption">high-speed-holodule</div>
         </div>
-      </a>
-      <p className={`${style.promotionName}`}></p>
-      <a
-        href="https://github.com/eternaleight/bubblegum-colorscheme"
-        target="_blank"
-      >
-        <div className="card-box">
-          <img
-            className={style.promotionTitleImg}
-            alt=""
-            src="assets/post/hakusan-bubble-01.png"
-          />
-          <div className="caption">
-            bubblegum-colorscheme
+        <img
+          src="assets/post/hakusan-bubble-01.png"
+          alt=""
+          className="w-full eventImg rounded-[10px] my-[25px]"
+        />
+        <h4 className="rightTItle mb-[20px]">
+          オンラインの友達
+        </h4>
+        <ul className="rightbarFriendList">
+          {Users.map((user) => (
+            <Online user={user} key={user.id} />
+          ))}
+          <li className={style.rightbarFriend}>
+            <div
+              className={style.rightbarFriendImgContainer}
+            >
+              <img
+                src="assets/person/2.jpeg"
+                alt=""
+                className={style.rightbarProfileImg}
+              />
+              <span className={style.rightbarOnline}></span>
+            </div>
+            <span className={style.rightbarUserName}>
+              eternaleight
+            </span>
+          </li>
+        </ul>
+        <p className={style.promotionTitle}></p>
+        <a
+          href="https://high-speed-holodule.vercel.app/"
+          target="_blank"
+        >
+          <div className="card-box">
+            <img
+              className={style.promotionTitleImg}
+              alt=""
+              src="assets/post/high-speed-holodule.png"
+            />
+            <div className="caption">
+              high-speed-holodule
+            </div>
           </div>
-        </div>
-      </a>
-      <p className={`${style.promotionName}`}></p>
-      <a
-        href="https://www.youtube.com/channel/UCg4XFdvhe7Zvttz4yZLh33A"
-        target="_blank"
-      >
-        <div className="card-box">
-          <img
-            className={style.promotionTitleImg}
-            alt=""
-            src="assets/post/initialcommit01.png"
-          />
-          <div className="caption">initial commit</div>
-        </div>
-      </a>
-      <p className={`${style.promotionName}`}></p>
+        </a>
+        <p className={`${style.promotionName}`}></p>
+        <a
+          href="https://github.com/eternaleight/bubblegum-colorscheme"
+          target="_blank"
+        >
+          <div className="card-box">
+            <img
+              className={style.promotionTitleImg}
+              alt=""
+              src="assets/post/hakusan-bubble-01.png"
+            />
+            <div className="caption">
+              bubblegum-colorscheme
+            </div>
+          </div>
+        </a>
+        <p className={`${style.promotionName}`}></p>
+        <a
+          href="https://www.youtube.com/channel/UCg4XFdvhe7Zvttz4yZLh33A"
+          target="_blank"
+        >
+          <div className="card-box">
+            <img
+              className={style.promotionTitleImg}
+              alt=""
+              src="assets/post/initialcommit01.png"
+            />
+            <div className="caption">initial commit</div>
+          </div>
+        </a>
+        <p className={`${style.promotionName}`}></p>
+      </>
+    )
+  }
+
+  const ProfileRightBar = () => {
+    return (
+      <>
+        <h4 className="rightbarTitle text-[16px] mb-[10px]">
+          ユーザー情報
+          <div className="rihgtbarInfo mb-[30px]">
+            <div className="rightbarInfoItem mb-[10px]">
+              <span className="rihgtbarInfoKey mr-[5px]">
+                拠点:
+              </span>
+              <span className="rightbarInfoKey">福岡</span>
+            </div>
+            <h4 className="rightbarTitle">フォロワー</h4>
+            <div className="flex flex-wrap items-center justify-between rightbarFollwings">
+                {Users.map((user) => (
+                  <>
+              <div className="flex flex-col items-center rightbarFollwing mb-[20px]">
+                    <img
+                      src={user.profilePicture}
+                      alt=""
+                      className="object-cover w-36 h-36 rounded-ful cursor-pointer hover:opacity-[0.85] duration-[0.15] rightbarFollowingImg"
+                    />
+                    <span className="rightbarFollowingName">
+                      {user.username}
+                    </span>
+              </div>
+                  </>
+                ))}
+            </div>
+          </div>
+        </h4>
+      </>
+    )
+  }
+
+  return (
+    <div className="flex-[2.5] rightbar">
+      <div className="rightbarWrapper pt-[20px] pr-[20px]">
+        {profile ? <ProfileRightBar /> : <HomeRightBar />}
+      </div>
     </div>
-  </div>
-)
+  )
+}
+
 export default Rightbar
