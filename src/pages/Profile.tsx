@@ -24,8 +24,12 @@ const Profile: React.FC = () => {
               />
             </div>
             <div className="profileInfo">
-              <h4 className="profileInfoName">eternaleight</h4>
-              <span className="profileInfoDesc">個人開発/nvim</span>
+              <h4 className="profileInfoName">
+                Ryoya Itabashi
+              </h4>
+              <span className="profileInfoDesc">
+                個人開発/nvim
+              </span>
             </div>
             <div className="profilerightBottom"></div>
           </div>
