@@ -34,7 +34,7 @@ const Topbar: React.FC = () => {
       }
     >
       <div className="topbarLeft flex-[3]">
-        <span className="absolute ml-5 text-2xl font-bold top-[18px] font-sans logo">
+        <span onClick={() => window.scrollTo(0,0)} className="absolute cursor-pointer ml-5 text-2xl font-bold top-[18px] font-sans logo">
           Geek-SNS
         </span>
       </div>
