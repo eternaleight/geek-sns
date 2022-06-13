@@ -75,9 +75,9 @@ const Post: React.FC<Props> = ({ post }) => {
               <>
                 <Favorite
                 onClick={() => handleLike()}
-                className="cursor-pointer text-[#F61980] w-[20px]"
+                className="cursor-pointer text-[#F61980f0] w-[20px]"
               />
-            <span className="postLikeCounter text-[#F61980dd] text-[14px] mt-[1px] ml-1">
+            <span className="postLikeCounter text-[#F61980aa] text-[14px] mt-[1px] ml-1">
               {likeNum}
             </span>
             </>
