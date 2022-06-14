@@ -6,26 +6,15 @@ import Timeline from '../components/Timeline'
 
 type Props = {
   button: boolean
+  screenSize: number
 }
 
-const Home: React.FC<Props> = ({ button }) => {
-  const [screenSize, setScreenSize] = useState<number>(window.innerWidth < 768 ? 767 : 769)
-
-  const windowWidth = () => {
-    setScreenSize(window.innerWidth)
-  }
-
-  useEffect(() => {
-    window.addEventListener('resize', windowWidth)
-    return () =>
-      window.removeEventListener('resize', windowWidth)
-  }, [])
-
+const Home: React.FC<Props> = ({ button, screenSize }) => {
   return (
     <>
       <Topbar />
       <div className="flex">
-        {(screenSize < 768) ? (
+        {screenSize < 768 ? (
           <Timeline />
         ) : (
           <>
