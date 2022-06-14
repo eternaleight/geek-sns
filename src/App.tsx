@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import './App.scss'
 import Home from './pages/Home'
 import Profile from './pages/Profile'
+import Login from './pages/login'
+
 
 const App: React.FC = () => {
   const [button, setButton] = useState<boolean>(false)
@@ -10,6 +12,7 @@ const App: React.FC = () => {
   }
   return (
     <div className="App">
+      <Login/>
       <div onClick={() => Button()} className='sticky top-0 text-center cursor-pointer bg-zinc-800'>Change</div>
       {button ? <Home button={button}/> : <Profile />}
     </div>
