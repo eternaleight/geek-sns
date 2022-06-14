@@ -1,17 +1,15 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import Rightbar from '../components/Rightbar'
 import Sidebar from '../components/Sidebar'
 import Topbar from '../components/Topbar'
 import TimeLine from '../components/Timeline'
+import { SizeContext } from '../utils/size-observer'
 
-type Props = {
-  screenSize: number
-}
-
-const Profile: React.FC<Props> = ({ screenSize }) => {
+const Profile: React.FC = () => {
+  const { innerWidth } = useContext(SizeContext)
   return (
     <>
-      {screenSize < 768 ? (
+      {innerWidth < 768 ? (
         <>
           <Topbar />
           <div className="flex profile">
