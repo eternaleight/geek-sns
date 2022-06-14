@@ -74,23 +74,23 @@ const Post: React.FC<Props> = ({ post }) => {
             {likeBool ? (
               <>
                 <Favorite
-                onClick={() => handleLike()}
-                className="cursor-pointer text-[#F61980f0] w-[20px]"
-              />
-            <span className="postLikeCounter text-[#F61980aa] text-[14px] mt-[1px] ml-1">
-              {likeNum}
-            </span>
-            </>
+                  onClick={() => handleLike()}
+                  className="cursor-pointer text-[#F61980f0] w-[20px]"
+                />
+                <span className="postLikeCounter text-[#F61980aa] text-[14px] mt-[1px] ml-1">
+                  {likeNum}
+                </span>
+              </>
             ) : (
-              <div className='relative my-[-2px] flex'>
-              <FavoriteBorder
-                onClick={() => handleLike()}
-                className="like cursor-pointer mb-[0px] text-zinc-500 w-[20px]"
-              />
-                <div className='likeCircle'></div>
-            <span className="postLikeCounter text-[14px] mt-[1px] ml-1">
-              {likeNum}
-            </span>
+              <div className="relative my-[-2px] flex">
+                <FavoriteBorder
+                  onClick={() => handleLike()}
+                  className="like cursor-pointer mb-[0px] text-zinc-500 w-[20px]"
+                />
+                <div className="likeCircle"></div>
+                <span className="postLikeCounter text-[14px] mt-[1px] ml-1">
+                  {likeNum}
+                </span>
               </div>
             )}
           </div>

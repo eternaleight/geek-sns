@@ -76,7 +76,9 @@ const Share = () => {
               </div>
             </div>
             <div className={style.shareOptions}>
-              <SentimentVerySatisfied className={style.shareIcon} />
+              <SentimentVerySatisfied
+                className={style.shareIcon}
+              />
               <div className="relative flex flex-col">
                 <span className={style.shareOptionText}>
                   Emoji
@@ -95,7 +97,7 @@ const Share = () => {
                 <span className={style.shareOptionText}>
                   Poll
                 </span>
-                <div className='absolute top-0 left-[-26px] w-[58px] cursor-pointer h-[24px] bg-[#00000000] mediaButton'></div>
+                <div className="absolute top-0 left-[-26px] w-[58px] cursor-pointer h-[24px] bg-[#00000000] mediaButton"></div>
                 <span
                   className={`${style.shareOptionText2} left-[-2px]`}
                 >

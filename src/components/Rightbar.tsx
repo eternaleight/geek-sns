@@ -116,9 +116,9 @@ const Rightbar = ({ profile }: any) => {
             </div>
             <h4 className="rightbarTitle">フォロワー</h4>
             <div className="flex flex-wrap items-center justify-between rightbarFollwings">
-                {Users.map((user) => (
-                  <>
-              <div className="flex flex-col items-center rightbarFollwing mb-[20px]">
+              {Users.map((user) => (
+                <>
+                  <div className="flex flex-col items-center rightbarFollwing mb-[20px]">
                     <img
                       src={user.profilePicture}
                       alt=""
@@ -127,9 +127,9 @@ const Rightbar = ({ profile }: any) => {
                     <span className="rightbarFollowingName">
                       {user.username}
                     </span>
-              </div>
-                  </>
-                ))}
+                  </div>
+                </>
+              ))}
             </div>
           </div>
         </h4>

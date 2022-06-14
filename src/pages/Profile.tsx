@@ -4,24 +4,14 @@ import Sidebar from '../components/Sidebar'
 import Topbar from '../components/Topbar'
 import TimeLine from '../components/Timeline'
 
-const Profile: React.FC = () => {
-  const [screenSize, setScreenSize] = useState<number>(
-    window.innerWidth < 768 ? 767 : 769
-  )
+type Props = {
+  screenSize: number
+}
 
-  const windowWidth = () => {
-    setScreenSize(window.innerWidth)
-  }
-
-  useEffect(() => {
-    window.addEventListener('resize', windowWidth)
-    return () =>
-    window.removeEventListener('resize', windowWidth)
-  }, [])
-
+const Profile: React.FC<Props> = ({ screenSize }) => {
   return (
     <>
-      {(screenSize < 768) ? (
+      {screenSize < 768 ? (
         <>
           <Topbar />
           <div className="flex profile">
@@ -61,7 +51,7 @@ const Profile: React.FC = () => {
             </div>
           </div>
         </>
-      ) : 
+      ) : (
         <>
           <Topbar />
           <div className="flex profile">
@@ -102,7 +92,7 @@ const Profile: React.FC = () => {
             </div>
           </div>
         </>
-      }
+      )}
     </>
   )
 }
