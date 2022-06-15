@@ -4,7 +4,7 @@ import {
   MoreVert,
 } from '@mui/icons-material'
 import { useEffect, useState } from 'react'
-import { Users } from '../Posts/dummydata'
+import { Users } from '../Posts/postdata'
 
 type PostsArray = {
   id?: number

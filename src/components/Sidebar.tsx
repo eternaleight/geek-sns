@@ -7,7 +7,7 @@ import {
   Settings,
 } from '@mui/icons-material'
 import CloseFriend from './CloseFriend'
-import { Users } from '../Posts/dummydata'
+import { Users } from '../Posts/postdata'
 
 type UserType = {
   id?: number

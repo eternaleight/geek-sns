@@ -15,13 +15,20 @@ const Home: React.FC = () => {
     <>
       <Topbar />
       <div className="flex">
-        {innerWidth < 768 ? (
-          <Timeline />
-        ) : (
+        {innerWidth > 840 ? (
           <>
             <Sidebar />
             <Timeline />
             <Rightbar />
+          </>
+        ) : innerWidth > 700 ? (
+          <>
+            <Timeline />
+            <Rightbar />
+          </>
+        ) : (
+          <>
+            <Timeline />
           </>
         )}
       </div>

@@ -1,6 +1,6 @@
 import Share from './Share'
 import Post from './Post'
-import { Posts } from '../Posts/dummydata'
+import { Posts } from '../Posts/postdata'
 
 type PostsArray = {
   id?: number
