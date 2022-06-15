@@ -1,13 +1,22 @@
-import { useContext, useEffect, useState } from 'react'
+import React, {
+  useContext,
+} from 'react'
 import { ScrollContext } from '../utils/scroll-observer'
 import { SizeContext } from '../utils/size-observer'
+import { LoginContext } from '../utils/login-observer'
 
 const Login: React.FC = () => {
   const { innerWidth } = useContext(SizeContext)
   const { scrollY } = useContext(ScrollContext)
-  const [loginState, setLoginState] = useState<boolean>(false)
+  const { loginState, setLoginState } =
+    useContext(LoginContext)
+
   const login = () => {
-    innerWidth < 768 ? window.scrollTo(0, 660) : window.scrollTo(0, 960)
+    if (innerWidth < 768) {
+      scrollY < 160 ? window.scrollTo(0, 660) : null //eslint-disable-line
+    } else {
+      scrollY < 160 ? window.scrollTo(0, 960) : null //eslint-disable-line
+    }
     setLoginState(!loginState)
   }
 
@@ -37,7 +46,11 @@ const Login: React.FC = () => {
         >
           <div className="loginleft flex-[1] flex flex-col justify-center">
             <h3
-              onClick={() => innerWidth < 768 ? window.scrollTo(0, 660) : window.scrollTo(0, 960)}
+              onClick={() =>
+                innerWidth < 768
+                  ? window.scrollTo(0, 660)
+                  : window.scrollTo(0, 960)
+              }
               className="text-[50px] font-bold cursor-pointer"
             >
               Geek-SNS
@@ -65,7 +78,10 @@ const Login: React.FC = () => {
                 brilliant ✨
                 <br />
                 hacker community !! 💎
-                <button onClick={() => login()} className={style.loginButton}>
+                <button
+                  onClick={() => login()}
+                  className={style.loginButton}
+                >
                   <span className="relative w-[100%] py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
                     ログイン
                   </span>

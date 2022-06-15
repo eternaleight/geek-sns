@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'
 import App from './App'
 import SizeObserver from './utils/size-observer'
 import ScrollObserver from './utils/scroll-observer'
+import LoginObserver from './utils/login-observer'
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -10,9 +11,11 @@ const root = ReactDOM.createRoot(
 root.render(
   <ScrollObserver>
     <SizeObserver>
-      <React.StrictMode>
-        <App />
-      </React.StrictMode>
+      <LoginObserver>
+        <React.StrictMode>
+          <App />
+        </React.StrictMode>
+      </LoginObserver>
     </SizeObserver>
   </ScrollObserver>
 )

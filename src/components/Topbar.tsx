@@ -20,7 +20,6 @@ const Topbar: React.FC = () => {
   }
 
   useEffect(() => {
-  console.log(window.scrollY)
     window.addEventListener('scroll', transitionNavBar)
     return () =>
       window.removeEventListener('scroll', transitionNavBar)
@@ -49,7 +48,7 @@ const Topbar: React.FC = () => {
               <Search className="searchIcon max-xs:w-0 mt-[10px] text-[20px] w-[30px] text-gray-500" />
               <input
                 type="text"
-                className="bg-[#00000000] searchInput max-xs:w-0 w-[80%] focus:outline-none text-gray-300"
+                className="bg-[#00000000] searchInput max-xs:w-0 w-[80%] outline-none text-gray-300"
                 placeholder="Search"
               />
             </div>
@@ -60,7 +59,7 @@ const Topbar: React.FC = () => {
               <Search className="duration-700 searchIcon max-xs:w-0 mt-[5px] text-[20px] w-[30px] text-gray-500" />
               <input
                 type="text"
-                className="duration-700 bg-[#00000000] searchInput max-xs:w-0 w-[80%] focus:outline-none text-gray-300"
+                className="duration-700 bg-[#00000000] searchInput max-xs:w-0 w-[80%] outline-none text-gray-300"
                 placeholder="Search"
               />
             </div>
