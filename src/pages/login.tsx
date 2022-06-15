@@ -1,15 +1,15 @@
 import { useContext, useEffect, useState } from 'react'
-import {ScrollContext} from '../utils/scroll-observer'
+import { ScrollContext } from '../utils/scroll-observer'
 import { SizeContext } from '../utils/size-observer'
 
 const Login: React.FC = () => {
-  const [loginState, setLoginState] = useState<boolean>(false)
-  const login = () => {
-    window.scrollTo(0, 960)
-    setLoginState(!loginState)
-  }
   const { innerWidth } = useContext(SizeContext)
   const { scrollY } = useContext(ScrollContext)
+  const [loginState, setLoginState] = useState<boolean>(false)
+  const login = () => {
+    innerWidth < 768 ? window.scrollTo(0, 660) : window.scrollTo(0, 960)
+    setLoginState(!loginState)
+  }
 
   const style = {
     loginInput: `focus:outline-none h-[50px] w-full rounded-[4px] mb-1`,
@@ -18,13 +18,28 @@ const Login: React.FC = () => {
 
   return (
     <>
-      <div style={{
-        backgroundColor: `#21212783`
+      <div
+        style={{
+          backgroundColor: `#21212783`,
         }}
-        className={loginState ? "z-[100] top-0 login w-[100vw] mx-auto h-[100vh] flex items-center justify-center" : "sticky z-[100] top-0 login w-[100vw] mx-auto h-[100vh] flex items-center justify-center"}>
-        <div className={innerWidth < 768 ? "loginWrapper w-[70%] h-[70%] flex flex-col mb-28" : "loginWrapper w-[70%] h-[70%] flex"}>
+        className={
+          loginState
+            ? 'z-[100] top-0 login w-[100vw] mx-auto h-[100vh] flex items-center justify-center'
+            : 'sticky z-[100] top-0 login w-[100vw] mx-auto h-[100vh] flex items-center justify-center'
+        }
+      >
+        <div
+          className={
+            innerWidth < 768
+              ? 'loginWrapper w-[70%] h-[70%] flex flex-col mb-28'
+              : 'loginWrapper w-[70%] h-[70%] flex'
+          }
+        >
           <div className="loginleft flex-[1] flex flex-col justify-center">
-            <h3 onClick={() => window.scrollTo(0, 960)} className="text-[50px] font-bold cursor-pointer">
+            <h3
+              onClick={() => innerWidth < 768 ? window.scrollTo(0, 660) : window.scrollTo(0, 960)}
+              className="text-[50px] font-bold cursor-pointer"
+            >
               Geek-SNS
             </h3>
             <span className="loginDesc flex-[0] text-[20px] flex flex-col justify-center">
