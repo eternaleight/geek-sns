@@ -14,15 +14,11 @@ const App: React.FC = () => {
       <Login />
       <div
         onClick={() => Button()}
-        className="sticky top-0 text-center cursor-pointer bg-zinc-800"
+        className="sticky top-[850px] text-center cursor-pointer bg-zinc-800 z-[110]"
       >
         Change
       </div>
-      {button ? (
-        <Home />
-      ) : (
-        <Profile />
-      )}
+      {button ? <Home /> : <Profile />}
     </div>
   )
 }

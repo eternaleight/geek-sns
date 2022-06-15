@@ -44,11 +44,11 @@ const Profile: React.FC = () => {
               </div>
               <div className="flex">
                 <TimeLine />
-                <Rightbar profile />
+                {innerWidth < 500 ? null : <Rightbar profile />}
               </div>
             </div>
           </div>
-        </>
+        </> 
       ) : (
         <>
           <Topbar />
