@@ -20,6 +20,7 @@ const Topbar: React.FC = () => {
   }
 
   useEffect(() => {
+  console.log(window.scrollY)
     window.addEventListener('scroll', transitionNavBar)
     return () =>
       window.removeEventListener('scroll', transitionNavBar)
@@ -72,9 +73,9 @@ const Topbar: React.FC = () => {
           <div className="flex">
             <div className="groupButton w-[24px] h-[25px] bg-transparent cursor-pointer left-[23px] relative bg-transparent"></div>
             <Chat className="cursor-pointer upAnime hover:text-blue-500 transition" />
-            <span className={style.topbarIconBadge}>5</span>
+            <span className={style.topbarIconBadge}>2</span>
             <Notifications className="cursor-pointer buruburuAnime hover:text-blue-500 transition" />
-            <span className={style.topbarIconBadge}>108</span>
+            <span className={style.topbarIconBadge}>8</span>
           </div>
         </div>
         <img

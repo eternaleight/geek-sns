@@ -1,12 +1,23 @@
+import { useContext, useEffect } from 'react'
+import {ScrollContext} from '../utils/scroll-observer'
+import { SizeContext } from '../utils/size-observer'
+
 const Login: React.FC = () => {
+  const { innerWidth } = useContext(SizeContext)
+  const { scrollY } = useContext(ScrollContext)
+
   const style = {
-    loginInput: `focus:outline-none h-[50px] rounded-[4px] mb-1`,
+    loginInput: `focus:outline-none h-[50px] w-full rounded-[4px] mb-1`,
     loginButton: `relative inline-flex items-center justify-center p-0.5 mb-2 mr-2  text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800`,
   }
+
   return (
     <>
-      <div className="login w-[90vw] mx-auto h-[95.5vh] flex items-center justify-center">
-        <div className="loginWrapper w-[70%] h-[70%] flex">
+      <div style={{
+        backgroundColor: `#21212783`
+        }}
+         className="sticky z-[100] top-0 login w-[100vw] mx-auto h-[100vh] flex items-center justify-center">
+        <div className={innerWidth < 768 ? "loginWrapper w-[70%] h-[70%] flex flex-col mb-28" : "loginWrapper w-[70%] h-[70%] flex"}>
           <div className="loginleft flex-[1] flex flex-col justify-center">
             <h3 className="text-[50px] font-bold">
               Geek-SNS
