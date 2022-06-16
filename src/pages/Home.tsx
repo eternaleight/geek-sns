@@ -1,6 +1,4 @@
 import React, {
-  useState,
-  useEffect,
   useContext,
 } from 'react'
 import Topbar from '../components/Topbar'

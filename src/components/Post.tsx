@@ -3,7 +3,7 @@ import {
   FavoriteBorder,
   MoreVert,
 } from '@mui/icons-material'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { Users } from '../Posts/postdata'
 
 type PostsArray = {

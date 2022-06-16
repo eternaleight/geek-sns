@@ -1,6 +1,5 @@
 import {
   Analytics,
-  Face,
   Gif,
   Image,
   SentimentVerySatisfied,
