@@ -18,9 +18,8 @@ const Rightbar = ({ profile }: any) => {
     return (
       <>
         <div className="flex items-center eventContainer">
-          <Star className="StarImg w-[18px] mt-[2px] mr-[3px]" />
           <span className="eventText font-[300] text-[15px]">
-            <b>フォロワー限定</b>イベント開催予定
+            nvim/vim colorscheme<br/>bubblegum-colorscheme
           </span>
         </div>
         <img

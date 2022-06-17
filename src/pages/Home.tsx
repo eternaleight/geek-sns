@@ -1,6 +1,4 @@
-import React, {
-  useContext,
-} from 'react'
+import React, { useContext } from 'react'
 import Topbar from '../components/Topbar'
 import Rightbar from '../components/Rightbar'
 import Sidebar from '../components/Sidebar'

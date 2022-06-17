@@ -33,7 +33,7 @@ const Share = () => {
           <input
             type="text"
             className={style.shareInput}
-            placeholder="今何してる？"
+            placeholder="what's happening?"
           />
         </div>
         <hr className={style.shareHr} />
