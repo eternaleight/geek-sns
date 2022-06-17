@@ -3,7 +3,7 @@ import { ScrollContext } from '../utils/scroll-observer'
 import { SizeContext } from '../utils/size-observer'
 import { LoginContext } from '../utils/login-observer'
 
-const Login: React.FC = () => {
+const Register: React.FC = () => {
   const { innerWidth } = useContext(SizeContext)
   const { scrollY } = useContext(ScrollContext)
   const { loginState, setLoginState } =
@@ -60,10 +60,15 @@ const Login: React.FC = () => {
           </div>
           <div className="loginRight flex-[1]  text-[22px] flex flex-col justify-center">
             <div className="loginRight">
-              <div className="loginBox h-[320px] p-[20px] flex flex-col justify-between bg-zinc-700 rounded-[10px] text-[16px]">
+              <div className="loginBox h-[400px] p-[20px] flex flex-col justify-between bg-zinc-700 rounded-[10px] text-[16px]">
                 <p className="loginMsg text-[16px] relative top-[-8px]">
-                  ログインはこちらから
+                  新規登録はこちらから
                 </p>
+                <input
+                  className={style.loginInput}
+                  type="text"
+                  placeholder=" Username"
+                />
                 <input
                   className={style.loginInput}
                   type="text"
@@ -73,6 +78,11 @@ const Login: React.FC = () => {
                   className={style.loginInput}
                   type="text"
                   placeholder=" Password"
+                />
+                <input
+                  className={style.loginInput}
+                  type="text"
+                  placeholder=" Confirmation password"
                 />
                 brilliant ✨
                 <br />
@@ -84,7 +94,7 @@ const Login: React.FC = () => {
                       className={style.loginButton}
                     >
                       <span className="relative w-[100%] py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
-                        ログイン
+                        新規登録/サインアップ
                       </span>
                     </button>
                     <span className="loginForget text-[15px]">
@@ -92,7 +102,7 @@ const Login: React.FC = () => {
                     </span>
                     <button className={style.loginButton}>
                       <span className="relative w-[100%] py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
-                        アカウント作成
+                        ログイン
                       </span>
                     </button>
                   </>
@@ -102,13 +112,13 @@ const Login: React.FC = () => {
                       onClick={() => login()}
                       className={style.loginButton2}
                     >
-                      ログイン
+                      新規登録/サインアップ
                     </button>
                     <span className="loginForget text-[15px]">
                       パスワード忘れた方へ
                     </span>
                     <button className={style.loginButton2}>
-                      アカウント作成
+                      ログイン
                     </button>
                   </>
                 )}
@@ -120,4 +130,4 @@ const Login: React.FC = () => {
     </>
   )
 }
-export default Login
+export default Register

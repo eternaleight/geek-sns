@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import Profile from './pages/Profile'
 import Login from './pages/login'
 import { LoginContext } from './utils/login-observer'
+import Register from './pages/Register'
 
 const App: React.FC = () => {
   const [button, setButton] = useState<boolean>(false)
@@ -14,7 +15,7 @@ const App: React.FC = () => {
   }
   return (
     <div className="App">
-      <Login />
+      <Register />
       <div
         onClick={() => Button()}
         className={loginState ? " top-[0] text-center cursor-pointer bg-zinc-800 z-[110]":"sticky top-[850px] text-center cursor-pointer bg-zinc-800 z-[110]" }

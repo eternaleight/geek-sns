@@ -3,17 +3,19 @@ import React, {
   useEffect,
   useContext,
   ReactNode,
+  Dispatch,
+  SetStateAction,
 } from 'react'
 import { ScrollContext } from '../utils/scroll-observer'
 
 type LoginBool = {
   loginState: boolean
-  setLoginState: any
+  setLoginState: Dispatch<SetStateAction<boolean>>
 }
 
 export const LoginContext = React.createContext<LoginBool>({
   loginState: false,
-  setLoginState: {},
+  setLoginState: undefined as never,
 })
 
 type Props = {
