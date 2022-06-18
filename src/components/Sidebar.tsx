@@ -8,6 +8,7 @@ import {
 } from '@mui/icons-material'
 import CloseFriend from './CloseFriend'
 import { Users } from '../Posts/postdata'
+import { Link, useNavigate } from 'react-router-dom'
 
 type UserType = {
   id?: number
@@ -24,63 +25,71 @@ const style = {
   transparent: `Btn-Text content-[""] after:bg-transparent after:w-[100%]`,
 }
 
-const Sidebar: React.FC = () => (
-  <div className="flex-[2.5] h-screen">
-    <div className={style.sidebarWrapper}>
-      <ul className={style.sidebarList}>
-        <li className={style.sidebarListItem}>
-          <span className={style.sidebarListText}>
-            <div className={style.transparent}></div>
-            <Home className={style.sidebarListIcon} />
-            ホーム
-          </span>
-        </li>
-        <li className={style.sidebarListItem}>
-          <span className={style.sidebarListText}>
-            <div className={style.transparent}></div>
-            <Search className={style.sidebarListIcon} />
-            検索
-          </span>
-        </li>
-        <li className={style.sidebarListItem}>
-          <span className={style.sidebarListText}>
-            <div className={style.transparent}></div>
-            <Notifications
-              className={style.sidebarListIcon}
-            />
-            通知
-          </span>
-        </li>
-        <li className={style.sidebarListItem}>
-          <span className={style.sidebarListText}>
-            <div className={style.transparent}></div>
-            <Bookmark className={style.sidebarListIcon} />
-            ブックマーク
-          </span>
-        </li>
-        <li className={style.sidebarListItem}>
-          <span className={style.sidebarListText}>
-            <div className={style.transparent}></div>
-            <Person className={style.sidebarListIcon} />
-            プロフィール
-          </span>
-        </li>
-        <li className={style.sidebarListItem}>
-          <span className={style.sidebarListText}>
-            <div className={style.transparent}></div>
-            <Settings className={style.sidebarListIcon} />
-            設定
-          </span>
-        </li>
-      </ul>
-      <hr className="sidebarHr mt-9" />
-      <ul className="sidebarFriendList">
-        {Users.map((user: UserType) => (
-          <CloseFriend user={user} key={user.id} />
-        ))}
-      </ul>
-    </div>
-  </div>
-)
+const Sidebar: React.FC = () => {
 
+  const navigate = useNavigate()
+
+  return (
+    <div className="flex-[2.5] h-screen">
+      <div className={style.sidebarWrapper}>
+        <ul className={style.sidebarList}>
+          <Link to="/">
+          <li className={style.sidebarListItem}>
+            <span className={style.sidebarListText}>
+              <div className={style.transparent}></div>
+              <Home className={style.sidebarListIcon} />
+              ホーム
+            </span>
+          </li>
+          </Link>
+          <li className={style.sidebarListItem}>
+            <span className={style.sidebarListText}>
+              <div className={style.transparent}></div>
+              <Search className={style.sidebarListIcon} />
+              検索
+            </span>
+          </li>
+          <li className={style.sidebarListItem}>
+            <span className={style.sidebarListText}>
+              <div className={style.transparent}></div>
+              <Notifications
+                className={style.sidebarListIcon}
+              />
+              通知
+            </span>
+          </li>
+          <li className={style.sidebarListItem}>
+            <span className={style.sidebarListText}>
+              <div className={style.transparent}></div>
+              <Bookmark className={style.sidebarListIcon} />
+              ブックマーク
+            </span>
+          </li>
+          <Link to="/profile/eternaleight">
+          <li className={style.sidebarListItem}>
+            <span className={style.sidebarListText}>
+              <div className={style.transparent}></div>
+              <Person className={style.sidebarListIcon} />
+              プロフィール
+            </span>
+          </li>
+          </Link>
+          <li className={style.sidebarListItem}>
+            <span className={style.sidebarListText}>
+              <div className={style.transparent}></div>
+              <Settings className={style.sidebarListIcon} />
+              設定
+            </span>
+          </li>
+        </ul>
+        <hr className="sidebarHr mt-9" />
+        <ul className="sidebarFriendList">
+          {Users.map((user: UserType) => (
+            <CloseFriend user={user} key={user.id} />
+          ))}
+        </ul>
+      </div>
+    </div>
+  )
+}
 export default Sidebar

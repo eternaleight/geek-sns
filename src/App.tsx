@@ -5,16 +5,23 @@ import Profile from './pages/Profile'
 import Login from './pages/login'
 import { LoginContext } from './utils/login-observer'
 import Register from './pages/Register'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 const App: React.FC = () => {
   const [button, setButton] = useState<boolean>(false)
-  const { loginState, setLoginState } = useContext(LoginContext)
+  const { loginState } = useContext(LoginContext)
 
   const Button = () => {
     setButton(!button)
   }
   return (
-    <div className="App">
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home/>}/>
+        <Route path="/login" element={<Login/>}/>
+        <Route path="/register" element={<Register/>}/>
+        <Route path="/profile/:username" element={<Profile/>}/>
+      </Routes>
       <Register />
       <div
         onClick={() => Button()}
@@ -23,9 +30,10 @@ const App: React.FC = () => {
         Change
       </div>
       {button ? <Home /> : <Profile />}
-    </div>
+    </BrowserRouter>
   )
 }
 
 export default App
+
 
