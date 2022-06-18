@@ -21,6 +21,7 @@ type Props = {
 }
 
 const Post: React.FC<Props> = ({ post }) => {
+  const PUBLIC_FOLDER = process.env.REACT_APP_PUBLIC_FOLDER
   const [likeNum, setLikeNum] = useState<number | any>(
     post.like
   )
@@ -30,7 +31,7 @@ const Post: React.FC<Props> = ({ post }) => {
   // useEffect(() => {
   //   console.log(user)
   // }, [])
-  //
+
   const handleLike = () => {
     setLikeNum(likeBool ? likeNum - 1 : likeNum + 1)
     setLikeBool(!likeBool)
@@ -65,7 +66,7 @@ const Post: React.FC<Props> = ({ post }) => {
           <span className="postText">{post.desc}</span>
           <img
             className="postImg my-[20px] w-full max-h-[500px] object-contain"
-            src={post.photo}
+            src={`${PUBLIC_FOLDER}${post.photo}`}
             alt=""
           />
         </div>

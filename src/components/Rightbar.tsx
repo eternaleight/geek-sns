@@ -1,4 +1,3 @@
-import { Star } from '@mui/icons-material'
 import Online from './Online'
 import { Users } from '../posts/postdata'
 

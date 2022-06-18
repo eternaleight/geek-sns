@@ -38,7 +38,7 @@ export const Posts = [
   {
     id: 2,
     desc: "github",
-    photo: "assets/post/3.png",
+    photo: "/post/3.png",
     date: "5分前",
     userId: 2,
     like: 14,
