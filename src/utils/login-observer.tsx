@@ -24,21 +24,20 @@ type Props = {
 
 const LoginObserver: React.FC<Props> = ({ children }) => {
   const { scrollY } = useContext(ScrollContext)
-  const [loginState, setLoginState] =
-    useState<boolean>(false)
+  const [loginState, setLoginState] = useState<boolean>(false)
 
   useEffect(() => {
-    scrollY < 10 //eslint-disable-line
-      ? loginState === true
-        ? setLoginState(!loginState)
-        : null
-      : null //eslint-disable-line
+    if (scrollY < 10) {
+      if (loginState === true) {
+        setLoginState(!loginState)
+      }
+      null //eslint-disable-line
+    }
+    null //eslint-disable-line
   }, [scrollY])
 
   return (
-    <LoginContext.Provider
-      value={{ loginState, setLoginState }}
-    >
+    <LoginContext.Provider value={{ loginState, setLoginState }}>
       {children}
     </LoginContext.Provider>
   )
