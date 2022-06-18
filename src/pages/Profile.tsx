@@ -88,7 +88,7 @@ const Profile: React.FC = () => {
                 <div className="profilerightBottom"></div>
               </div>
               <div className="flex">
-                <TimeLine />
+                <TimeLine username="eternaleight"/>
                 <Rightbar profile />
               </div>
             </div>

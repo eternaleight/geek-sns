@@ -34,12 +34,17 @@ type Api = {
   status: number
   statusText: string
 }
+type Props = {
+  username?: string
+}
 
-const Timeline: React.FC = () => {
+const Timeline: React.FC<Props> = ({ username }) => {
   const [posts, setPosts] = useState<any>([])
   useEffect(() => {
     ;(async () => {
-      const res = await axios.get(
+      const res = username 
+        ? await axios.get(`/posts/profile/${username}`)
+        : await axios.get(
         '/posts/timeline/629b5b3484d1d2669e8d88f0'
       )
       // console.log(res)
