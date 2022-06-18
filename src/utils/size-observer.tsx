@@ -18,7 +18,7 @@ type Props = {
 }
 const SizeObserver: React.FC<Props> = ({ children }) => {
   const [innerWidth, setInnnerWidth] = useState<number>(
-    window.innerWidth < 768 ? 767 : 769
+    window.innerWidth < 868 ? 867 : 869
   )
 
   const windowWidth = useCallback(() => {

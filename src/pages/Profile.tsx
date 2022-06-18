@@ -11,7 +11,7 @@ const Profile: React.FC = () => {
 
     return (
     <>
-      {innerWidth < 768 ? (
+      {innerWidth < 868 ? (
         <>
           <Topbar />
           <div className="flex profile">
@@ -46,7 +46,7 @@ const Profile: React.FC = () => {
               </div>
               <div className="flex">
                 <TimeLine />
-                {innerWidth < 500 ? null : (
+                {innerWidth < 650 ? null : (
                   <Rightbar profile />
                 )}
               </div>

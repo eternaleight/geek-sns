@@ -113,14 +113,14 @@ const Rightbar = ({ profile }: any) => {
               <span className="rightbarInfoKey">福岡</span>
             </div>
             <h4 className="rightbarTitle">フォロワー</h4>
-            <div className="flex flex-wrap items-center justify-between rightbarFollwings">
+            <div className="flex max-w-[350px] flex-wrap items-center xl:justify-around justify-center rightbarFollwings">
               {Users.map((user) => (
                 <div key={user.id}>
-                  <div className="flex flex-col items-center rightbarFollwing mb-[20px]">
+                  <div className="flex flex-col max-w-[200px] items-center rightbarFollwing mb-[20px]">
                     <img
                       src={user.profilePicture}
                       alt=""
-                      className="object-cover w-36 h-36 rounded-ful cursor-pointer hover:opacity-[0.85] duration-[0.15] rightbarFollowingImg"
+                      className="object-cover w-36 h-36 rounded-full cursor-pointer hover:opacity-[0.85] duration-[0.15] rightbarFollowingImg mx-4"
                     />
                     <span className="rightbarFollowingName">
                       {user.username}

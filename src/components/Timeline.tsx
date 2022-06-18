@@ -13,6 +13,7 @@ type PostsArray = {
   likes?: string[]
   comment: number
   img?: string
+  createdAt: string
 }
 
 type Api = {

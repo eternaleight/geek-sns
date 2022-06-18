@@ -6,6 +6,7 @@ import {
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 // import { Users } from '../posts/postdata'
+import { format } from 'timeago.js'
 
 type PostsArray = {
   id?: number
@@ -16,6 +17,7 @@ type PostsArray = {
   likes?: string[]
   comment?: number
   img?: string
+  createdAt: string
 }
 
 type Props = {
@@ -34,10 +36,11 @@ const Post: React.FC<Props> = ({ post }) => {
       const res = await axios.get(
         `/users/${post.userId}`
       )
-      console.log(res.data)
+      // console.log(res.data)
       setUser(res.data)
     })()
   }, [])
+
   const PUBLIC_FOLDER = process.env.REACT_APP_PUBLIC_FOLDER
 
   // const user = Users.filter((user) => user.id === 1)
@@ -66,7 +69,7 @@ const Post: React.FC<Props> = ({ post }) => {
               {user.username}
             </span>
             <span className="postData text-[12px]">
-              {post.date}
+              {format(post.createdAt)}
             </span>
           </div>
           <div className="postTopRight">
