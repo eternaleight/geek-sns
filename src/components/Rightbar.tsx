@@ -1,6 +1,6 @@
 import { Star } from '@mui/icons-material'
 import Online from './Online'
-import { Users } from '../Posts/postdata'
+import { Users } from '../posts/postdata'
 
 const style = {
   rightbarProfileImg: `w-[40px] h-[40px] rounded-full object-cover duration-[.15s] hover:opacity-[0.85] cursor-pointer`,

@@ -7,7 +7,7 @@ import {
   Settings,
 } from '@mui/icons-material'
 import CloseFriend from './CloseFriend'
-import { Users } from '../Posts/postdata'
+import { Users } from '../posts/postdata'
 import { Link, useNavigate } from 'react-router-dom'
 
 type UserType = {

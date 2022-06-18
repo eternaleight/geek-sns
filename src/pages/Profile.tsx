@@ -7,7 +7,9 @@ import { SizeContext } from '../utils/size-observer'
 
 const Profile: React.FC = () => {
   const { innerWidth } = useContext(SizeContext)
-  return (
+  const PUBLIC_FOLDER = process.env.REACT_APP_PUBLIC_FOLDER
+
+    return (
     <>
       {innerWidth < 768 ? (
         <>
@@ -17,12 +19,12 @@ const Profile: React.FC = () => {
               <div className="profileRightTop">
                 <div className="profileCover h-[280px] relative">
                   <img
-                    src="assets/person/2.jpeg"
+                    src={`${PUBLIC_FOLDER}/person/2.jpeg`}
                     alt=""
                     className="w-[100%] h-[210px] object-cover profileCoverImg"
                   />
                   <img
-                    src="assets/person/1.jpeg"
+                    src={`${PUBLIC_FOLDER}/person/1.jpeg`}
                     alt=""
                     className="absolute top-[150px] left-0 right-0 object-cover w-[130px] m-auto rounded-full p-3 border-[#202023] profileUserImg border-[1px]"
                   />
@@ -60,12 +62,12 @@ const Profile: React.FC = () => {
               <div className="profileRightTop">
                 <div className="profileCover h-[280px] relative">
                   <img
-                    src="assets/person/2.jpeg"
+                    src={`${PUBLIC_FOLDER}/person/2.jpeg`}
                     alt=""
                     className="w-[100%] h-[210px] object-cover profileCoverImg"
                   />
                   <img
-                    src="assets/person/1.jpeg"
+                    src={`${PUBLIC_FOLDER}/person/1.jpeg`}
                     alt=""
                     className="absolute top-[150px] left-0 right-0 object-cover w-[130px] m-auto rounded-full p-3 border-[#202023] profileUserImg border-[1px]"
                   />
