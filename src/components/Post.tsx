@@ -3,8 +3,9 @@ import {
   FavoriteBorder,
   MoreVert,
 } from '@mui/icons-material'
-import { useState } from 'react'
-import { Users } from '../posts/postdata'
+import axios from 'axios'
+import { useEffect, useState } from 'react'
+// import { Users } from '../posts/postdata'
 
 type PostsArray = {
   id?: number
@@ -12,8 +13,9 @@ type PostsArray = {
   photo?: string
   date?: string
   userId?: number
-  like?: number
+  likes?: string[]
   comment?: number
+  img?: string
 }
 
 type Props = {
@@ -21,11 +23,22 @@ type Props = {
 }
 
 const Post: React.FC<Props> = ({ post }) => {
-  const PUBLIC_FOLDER = process.env.REACT_APP_PUBLIC_FOLDER
-  const [likeNum, setLikeNum] = useState<number | undefined>(
-    post.like
-  )
+  const [likeNum, setLikeNum] = useState<number|undefined>(
+    post?.likes?.length
+)
   const [likeBool, setLikeBool] = useState<boolean>(false)
+  const [user, setUser] = useState<any>({})
+
+  useEffect(() => {
+    ;(async () => {
+      const res = await axios.get(
+        `/users/${post.userId}`
+      )
+      console.log(res.data)
+      setUser(res.data)
+    })()
+  }, [])
+  const PUBLIC_FOLDER = process.env.REACT_APP_PUBLIC_FOLDER
 
   // const user = Users.filter((user) => user.id === 1)
   // useEffect(() => {
@@ -45,16 +58,12 @@ const Post: React.FC<Props> = ({ post }) => {
         <div className="flex justify-center justify-between postTop">
           <div className="flex items-center postTopLeft">
             <img
-              src="/assets/person/1.jpeg"
+              src={user.profilePicture || "/assets/person/2.jpeg"}
               alt=""
               className="hover:opacity-[0.85] cursor-pointer duration-[0.15s] ease-out postProfileImg w-[32px] h-[32px] rounded-full object-cover"
             />
             <span className="postUserName text-[15px] font-semibold mx-[10px]">
-              {
-                Users.filter(
-                  (user) => user.id === post.id
-                )[0].username
-              }
+              {user.username}
             </span>
             <span className="postData text-[12px]">
               {post.date}
@@ -68,7 +77,7 @@ const Post: React.FC<Props> = ({ post }) => {
           <span className="postText">{post.desc}</span>
           <img
             className="postImg my-[20px] w-full max-h-[500px] object-contain"
-            src={`${PUBLIC_FOLDER}${post.photo}`}
+            src={`${PUBLIC_FOLDER}${post.img}`}
             alt=""
           />
         </div>
@@ -92,7 +101,7 @@ const Post: React.FC<Props> = ({ post }) => {
                 />
                 <div className="likeCircle"></div>
                 <span className="postLikeCounter text-[14px] mt-[1px] ml-1">
-                  {likeNum}
+                  {post?.likes?.length}
                 </span>
               </div>
             )}

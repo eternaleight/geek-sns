@@ -2,26 +2,47 @@ import Share from './Share'
 import Post from './Post'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
-// import { Posts } from '../posts/postdata'
+import { Posts } from '../posts/postdata'
 
 type PostsArray = {
-  id?: number
+  _id: number
   desc?: string
   photo?: string
-  date?: string
-  userId?: number
-  like?: number
-  comment?: number
+  date: string
+  userId: number
+  likes?: string[]
+  comment: number
+  img?: string
+}
+
+type Api = {
+  config: {}
+  data: [{
+      createdAt: string
+      desc: string
+      img: string
+      likes: string[]
+      updatedAt: string
+      userId: string
+      __v: number
+      _id: string}]
+  headers: {}
+  request: {
+    XMLHttpRequest: {}
+  }
+  status: number
+  statusText: string
 }
 
 const Timeline: React.FC = () => {
-  const [posts, setPosts] = useState([])
+  const [posts, setPosts] = useState<any>([])
   useEffect(() => {
     ;(async () => {
       const res = await axios.get(
         '/posts/timeline/629b5b3484d1d2669e8d88f0'
       )
-      console.log(res)
+      // console.log(res)
+      setPosts(res.data)
     })()
   }, [])
 
@@ -29,9 +50,9 @@ const Timeline: React.FC = () => {
     <div className="timeline flex-[6]">
       <div className="timelineWrapper p-[20px]">
         <Share />
-        {/* {Posts.map((post: PostsArray) => ( */}
-        {/*   <Post post={post} key={post.id} /> */}
-        {/* ))} */}
+        {posts.map((post: PostsArray) => (
+          <Post post={post} key={post._id} />
+        ))}
       </div>
     </div>
   )
