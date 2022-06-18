@@ -22,7 +22,7 @@ type Props = {
 
 const Post: React.FC<Props> = ({ post }) => {
   const PUBLIC_FOLDER = process.env.REACT_APP_PUBLIC_FOLDER
-  const [likeNum, setLikeNum] = useState<number | any>(
+  const [likeNum, setLikeNum] = useState<number | undefined>(
     post.like
   )
   const [likeBool, setLikeBool] = useState<boolean>(false)
@@ -33,7 +33,9 @@ const Post: React.FC<Props> = ({ post }) => {
   // }, [])
 
   const handleLike = () => {
-    setLikeNum(likeBool ? likeNum - 1 : likeNum + 1)
+    if (likeNum !== undefined) {
+      setLikeNum(likeBool ? likeNum - 1 : likeNum + 1)
+    }
     setLikeBool(!likeBool)
   }
 
