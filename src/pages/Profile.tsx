@@ -5,6 +5,7 @@ import Topbar from '../components/Topbar'
 import TimeLine from '../components/Timeline'
 import { SizeContext } from '../utils/size-observer'
 import axios from 'axios'
+import { useParams } from 'react-router-dom'
 
 type User = {
   _id: string
@@ -21,30 +22,28 @@ type User = {
 }
 
 const userInitial = {
-  _id: "" ,
-  username: "",
-  email: "",
-  password: "",
-  followers: "",
-  followings: "",
+  _id: "_id",
+  username: "username",
+  email: "email",
+  password: "password",
+  followers: "followers",
+  followings: "followings",
   isAdmin: false,
-  createdAt: "",
-  updatedAt: "",
+  createdAt: "createdAt",
+  updatedAt: "updatedAt",
   __v: 0,
-  desc: "",
+  desc: "desc",
 }
 
 const Profile: React.FC = () => {
   const { innerWidth } = useContext(SizeContext)
   const PUBLIC_FOLDER = process.env.REACT_APP_PUBLIC_FOLDER
   const [user, setUser] = useState<User>(userInitial)
+  const username = useParams().username
 
   useEffect(() => {
     ;(async () => {
-      const res = await axios.get(
-        `/users/?username=eternaleight`
-      )
-      // console.log(res.data)
+      const res = await axios.get(`/users?username=${username}`)
       setUser(res.data)
     })()
   }, [])
@@ -71,13 +70,11 @@ const Profile: React.FC = () => {
                 </div>
                 <div className="flex flex-col items-center">
                   <h2 className="font-bold text-[50px] titileName">
-                    Ryoya Itabashi
+                    {user.username}
                   </h2>
                   <div className="profileInfo">
-                    <h4 className="profileInfoName">
-                      {user.username}
-                    </h4>
-                    <span className="relative left-[-4px] profileInfoDesc">
+                    <h4 className="profileInfoName">{user.desc}</h4>
+                    <span className="relative profileInfoDesc">
                       {user.desc}
                     </span>
                   </div>
@@ -86,9 +83,7 @@ const Profile: React.FC = () => {
               </div>
               <div className="flex">
                 <TimeLine />
-                {innerWidth < 650 ? null : (
-                  <Rightbar profile />
-                )}
+                {innerWidth < 650 ? null : <Rightbar user />}
               </div>
             </div>
           </div>
@@ -114,13 +109,11 @@ const Profile: React.FC = () => {
                 </div>
                 <div className="flex flex-col items-center">
                   <h2 className="font-bold text-[50px] titileName">
-                    Ryoya Itabashi
+                    {user.username}
                   </h2>
                   <div className="profileInfo">
-                    <h4 className="profileInfoName">
-                      {user.username}
-                    </h4>
-                    <span className="relative left-[-4px] profileInfoDesc">
+                    <h4 className="profileInfoName">{user.desc}</h4>
+                    <span className="relative profileInfoDesc">
                       {user.desc}
                     </span>
                   </div>
@@ -128,8 +121,8 @@ const Profile: React.FC = () => {
                 <div className="profilerightBottom"></div>
               </div>
               <div className="flex">
-                <TimeLine username="eternaleight"/>
-                <Rightbar profile />
+                <TimeLine username={username} />
+                <Rightbar user />
               </div>
             </div>
           </div>

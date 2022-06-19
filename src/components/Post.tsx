@@ -64,9 +64,9 @@ const Post: React.FC<Props> = ({ post }) => {
   useEffect(() => {
     ;(async () => {
       const res = await axios.get(
-        `/users/${post.userId}`
+        `/users?userId=${post.userId}`
       )
-      // console.log(res.data)
+      console.log(res.data)
       setUser(res.data)
     })()
   }, [])

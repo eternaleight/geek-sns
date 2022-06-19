@@ -12,7 +12,21 @@ const style = {
   promotionTitleImg: `duration-500 card w-[300px] h-[250px] rounded-[10px] object-cover cursor-pointer my-[25px]`,
 }
 
-const Rightbar = ({ profile }: any) => {
+type User = {
+  _id: string
+  username: string
+  email: string
+  password: string
+  followers: string
+  followings: string
+  isAdmin: boolean
+  createdAt: string
+  updatedAt: string
+  __v: number
+  desc?: string
+}
+
+const Rightbar = ({ user }:any) => {
   const HomeRightBar = () => {
     return (
       <>
@@ -138,7 +152,7 @@ const Rightbar = ({ profile }: any) => {
   return (
     <div className="flex-[2.5] rightbar">
       <div className="rightbarWrapper pt-[20px] pr-[20px]">
-        {profile ? <ProfileRightBar /> : <HomeRightBar />}
+        {user ? <ProfileRightBar /> : <HomeRightBar />}
       </div>
     </div>
   )
