@@ -56,7 +56,7 @@ const Timeline: React.FC<Props> = ({ username }) => {
       // console.log(res)
       setPosts(res.data)
     })()
-  }, [])
+  }, [username])
 
   return (
     <div className="timeline flex-[6]">

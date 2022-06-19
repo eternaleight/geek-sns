@@ -9,6 +9,7 @@ import {
 import CloseFriend from './CloseFriend'
 import { Users } from '../posts/postdata'
 import { Link, useNavigate } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 
 type UserType = {
   id?: number
@@ -27,6 +28,7 @@ const style = {
 
 const Sidebar: React.FC = () => {
 
+  const username = useParams().username
   const navigate = useNavigate()
 
   return (
@@ -65,7 +67,7 @@ const Sidebar: React.FC = () => {
               ブックマーク
             </span>
           </li>
-          <Link to="/profile/eternaleight">
+          <Link to={`/profile/${username}`}>
           <li className={style.sidebarListItem}>
             <span className={style.sidebarListText}>
               <div className={style.transparent}></div>

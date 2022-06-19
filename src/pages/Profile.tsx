@@ -75,14 +75,14 @@ const Profile: React.FC = () => {
                   <div className="profileInfo">
                     <h4 className="profileInfoName">{user.desc}</h4>
                     <span className="relative profileInfoDesc">
-                      {user.desc}
+                      {/* {user.desc} */}
                     </span>
                   </div>
                 </div>
                 <div className="profilerightBottom"></div>
               </div>
               <div className="flex">
-                <TimeLine />
+                <TimeLine username={username} />
                 {innerWidth < 650 ? null : <Rightbar user />}
               </div>
             </div>
@@ -102,7 +102,7 @@ const Profile: React.FC = () => {
                     className="w-[100%] h-[210px] object-cover profileCoverImg"
                   />
                   <img
-                    src={`${PUBLIC_FOLDER}/person/1.jpeg`}
+                    src={username === "eternaleight" ? `${PUBLIC_FOLDER}/person/1.jpeg` : "/assets/person/2.jpeg" }
                     alt=""
                     className="absolute top-[150px] left-0 right-0 object-cover w-[130px] m-auto rounded-full p-3 border-[#202023] profileUserImg border-[1px]"
                   />
@@ -114,7 +114,7 @@ const Profile: React.FC = () => {
                   <div className="profileInfo">
                     <h4 className="profileInfoName">{user.desc}</h4>
                     <span className="relative profileInfoDesc">
-                      {user.desc}
+                      {/* {user.desc} */}
                     </span>
                   </div>
                 </div>
