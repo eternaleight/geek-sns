@@ -1,15 +1,55 @@
-import { useContext } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import Rightbar from '../components/Rightbar'
 import Sidebar from '../components/Sidebar'
 import Topbar from '../components/Topbar'
 import TimeLine from '../components/Timeline'
 import { SizeContext } from '../utils/size-observer'
+import axios from 'axios'
+
+type User = {
+  _id: string
+  username: string
+  email: string
+  password: string
+  followers: string
+  followings: string
+  isAdmin: boolean
+  createdAt: string
+  updatedAt: string
+  __v: number
+  desc?: string
+}
+
+const userInitial = {
+  _id: "" ,
+  username: "",
+  email: "",
+  password: "",
+  followers: "",
+  followings: "",
+  isAdmin: false,
+  createdAt: "",
+  updatedAt: "",
+  __v: 0,
+  desc: "",
+}
 
 const Profile: React.FC = () => {
   const { innerWidth } = useContext(SizeContext)
   const PUBLIC_FOLDER = process.env.REACT_APP_PUBLIC_FOLDER
+  const [user, setUser] = useState<User>(userInitial)
 
-    return (
+  useEffect(() => {
+    ;(async () => {
+      const res = await axios.get(
+        `/users/?username=eternaleight`
+      )
+      // console.log(res.data)
+      setUser(res.data)
+    })()
+  }, [])
+
+  return (
     <>
       {innerWidth < 868 ? (
         <>
@@ -35,10 +75,10 @@ const Profile: React.FC = () => {
                   </h2>
                   <div className="profileInfo">
                     <h4 className="profileInfoName">
-                      eternaleight
+                      {user.username}
                     </h4>
                     <span className="relative left-[-4px] profileInfoDesc">
-                      個人開発/nvim
+                      {user.desc}
                     </span>
                   </div>
                 </div>
@@ -78,10 +118,10 @@ const Profile: React.FC = () => {
                   </h2>
                   <div className="profileInfo">
                     <h4 className="profileInfoName">
-                      eternaleight
+                      {user.username}
                     </h4>
                     <span className="relative left-[-4px] profileInfoDesc">
-                      個人開発/nvim
+                      {user.desc}
                     </span>
                   </div>
                 </div>

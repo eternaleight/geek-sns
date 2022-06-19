@@ -24,12 +24,42 @@ type Props = {
   post: PostsArray
 }
 
+type User = {
+  _id: string
+  username: string
+  email: string
+  password: string
+  followers: string
+  followings: string
+  isAdmin: boolean
+  createdAt: string
+  updatedAt: string
+  __v: number
+  desc?: string
+  profilePicture: string
+}
+
+const userInitial = {
+  _id: "" ,
+  username: "",
+  email: "",
+  password: "",
+  followers: "",
+  followings: "",
+  isAdmin: false,
+  createdAt: "",
+  updatedAt: "",
+  __v: 0,
+  desc: "",
+  profilePicture: "",
+}
+
 const Post: React.FC<Props> = ({ post }) => {
   const [likeNum, setLikeNum] = useState<number|undefined>(
     post?.likes?.length
 )
   const [likeBool, setLikeBool] = useState<boolean>(false)
-  const [user, setUser] = useState<any>({})
+  const [user, setUser] = useState<User>(userInitial)
 
   useEffect(() => {
     ;(async () => {
