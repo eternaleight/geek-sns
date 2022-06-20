@@ -6,22 +6,22 @@ export const Users = [
   },
   {
     id: 2,
-    profilePicture: "/assets/shogun/Toyotomi_hideyoshi.png",
+    profilePicture: "/assets/person/2.jpeg",
     username: "Hideyoshi Toyotomi",
   },
   {
     id: 3,
-    profilePicture: "/assets/shogun/Sakamoto_ryoma.jpg",
+    profilePicture: "/assets/person/2.jpeg",
     username: "Ryoma Sakamoto",
   },
   {
     id: 4,
-    profilePicture: "/assets/shogun/Saigou_takamori.jpg",
+    profilePicture: "/assets/person/2.jpeg",
     username: "Takamori Saigou",
   },
   {
     id: 5,
-    profilePicture: "/assets/shogun/Tokugawa_Ieyasu.jpg",
+    profilePicture: "/assets/person/2.jpeg",
     username: "Ieyasu Tokugawa",
   },
 ];

@@ -62,8 +62,8 @@ const Timeline: React.FC<Props> = ({ username }) => {
     <div className="timeline flex-[6]">
       <div className="timelineWrapper p-[20px]">
         <Share />
-        {posts.map((post: any) => (
-          <Post post={post} key={post._id} />
+        {posts.map((post: any,id) => (
+          <Post post={post} key={id} />
         ))}
       </div>
     </div>

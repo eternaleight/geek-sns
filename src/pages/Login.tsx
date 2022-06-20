@@ -1,13 +1,30 @@
-import React, { useContext } from 'react'
+import React, { useContext, useRef } from 'react'
 import { ScrollContext } from '../utils/scroll-observer'
 import { SizeContext } from '../utils/size-observer'
 import { LoginContext } from '../utils/login-observer'
+import { loginCall } from '../state/ActionCalls'
+import { AuthContext } from '../state/AuthContext'
 
 const Login: React.FC = () => {
   const { innerWidth } = useContext(SizeContext)
   const { scrollY } = useContext(ScrollContext)
-  const { loginState, setLoginState } =
-    useContext(LoginContext)
+  const { loginState, setLoginState } = useContext(LoginContext)
+  const email = useRef<HTMLInputElement>(null)
+  const password = useRef<HTMLInputElement>(null)
+  const { user, isFetching, error, dispatch } = useContext(AuthContext)
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    // console.log(email.current?.value)
+    // console.log(password.current?.value)
+    loginCall(
+      {
+        email: email.current?.value,
+        password: password.current?.value,
+      },
+      dispatch
+    )
+  }
 
   const login = () => {
     if (innerWidth < 768) {
@@ -60,19 +77,27 @@ const Login: React.FC = () => {
           </div>
           <div className="loginRight flex-[1]  text-[22px] flex flex-col justify-center">
             <div className="loginRight">
-              <div className="loginBox h-[320px] p-[20px] flex flex-col justify-between bg-zinc-700 rounded-[10px] text-[16px]">
+              <form
+                onSubmit={(e) => handleSubmit(e)}
+                className="loginBox h-[320px] p-[20px] flex flex-col justify-between bg-zinc-700 rounded-[10px] text-[16px]"
+              >
                 <p className="loginMsg text-[16px] relative top-[-8px]">
                   ログインはこちらから
                 </p>
                 <input
+                  ref={email}
                   className={style.loginInput}
-                  type="text"
+                  type="email"
                   placeholder=" Email"
+                  required
                 />
                 <input
+                  ref={password}
                   className={style.loginInput}
-                  type="text"
+                  type="password"
                   placeholder=" Password"
+                  minLength={6}
+                  required
                 />
                 brilliant ✨
                 <br />
@@ -112,7 +137,7 @@ const Login: React.FC = () => {
                     </button>
                   </>
                 )}
-              </div>
+              </form>
             </div>
           </div>
         </div>

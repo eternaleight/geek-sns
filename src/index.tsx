@@ -4,18 +4,22 @@ import App from './App'
 import ScrollObserver from './utils/scroll-observer'
 import SizeObserver from './utils/size-observer'
 import LoginObserver from './utils/login-observer'
+import { AuthContextProvider } from './state/AuthContext'
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 )
 root.render(
-  <ScrollObserver>
-    <SizeObserver>
-      <LoginObserver>
-        <React.StrictMode>
-          <App />
-        </React.StrictMode>
-      </LoginObserver>
-    </SizeObserver>
-  </ScrollObserver>
+  <React.StrictMode>
+    <ScrollObserver>
+      <SizeObserver>
+        <LoginObserver>
+          <AuthContextProvider>
+            <App />
+          </AuthContextProvider>
+        </LoginObserver>
+      </SizeObserver>
+    </ScrollObserver>
+  </React.StrictMode>
 )
+

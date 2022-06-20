@@ -68,21 +68,26 @@ const Register: React.FC = () => {
                   className={style.loginInput}
                   type="text"
                   placeholder=" Username"
+                  required
                 />
                 <input
                   className={style.loginInput}
-                  type="text"
+                  type="email"
                   placeholder=" Email"
+                  required
                 />
                 <input
                   className={style.loginInput}
-                  type="text"
+                  type="password"
                   placeholder=" Password"
+                  minLength={6}
+                  required
                 />
                 <input
                   className={style.loginInput}
-                  type="text"
+                  type="password"
                   placeholder=" Confirmation password"
+                  required
                 />
                 brilliant ✨
                 <br />

@@ -7,6 +7,7 @@ import { SizeContext } from '../utils/size-observer'
 
 const Home: React.FC = () => {
   const { innerWidth } = useContext(SizeContext)
+   
   return (
     <>
       <Topbar />

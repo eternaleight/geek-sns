@@ -22,7 +22,7 @@ const App: React.FC = () => {
         <Route path="/register" element={<Register/>}/>
         <Route path="/profile/:username" element={<Profile/>}/>
       </Routes>
-      <Register />
+      <Login />
       <div
         onClick={() => Button()}
         className={loginState ? " top-[0] text-center cursor-pointer bg-zinc-800 z-[110]":"sticky top-[850px] text-center cursor-pointer bg-zinc-800 z-[110]" }
