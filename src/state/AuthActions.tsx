@@ -3,12 +3,12 @@ export const Loginstart = () => ({
   type: 'LOGIN_START',
 })
 
-export const LoginSuccess = (user: string) => ({
+export const LoginSuccess = (user: any) => ({
   type: 'LOGIN_SUCCEESS',
   payload: user
 })
 
-export const LoginError = (error: string) => ({
+export const LoginError = (error: any) => ({
   type: 'LOGIN_ERROR',
   payload: error
 })

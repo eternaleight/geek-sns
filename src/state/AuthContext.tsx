@@ -6,14 +6,7 @@ const initialState = {
   user: null,
   isFetching: false,
   error: false,
-  dispatch: null,
-}
-
-type InitialState = {
-  user?: string,
-  isFetching: boolean,
-  error: boolean,
-  dispatch: React.Dispatch<string>
+  dispatch: {} 
 }
 
 //状態をグローバルに管理する
@@ -31,7 +24,7 @@ export const AuthContextProvider = ({ children }:Props) => {
         user: state.user,
         isFetching: state.isFethching,
         error: state.error,
-        dispatch: null,
+        dispatch,
       }}
     >
       {children}

@@ -11,12 +11,12 @@ const Login: React.FC = () => {
   const { loginState, setLoginState } = useContext(LoginContext)
   const email = useRef<HTMLInputElement>(null)
   const password = useRef<HTMLInputElement>(null)
-  const { user, isFetching, error, dispatch } = useContext(AuthContext)
+  const { user, isFetching, error, dispatch } = useContext<any>(AuthContext)
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    // console.log(email.current?.value)
-    // console.log(password.current?.value)
+    console.log(email.current?.value)
+    console.log(password.current?.value)
     loginCall(
       {
         email: email.current?.value,
@@ -25,6 +25,7 @@ const Login: React.FC = () => {
       dispatch
     )
   }
+  console.log(user)
 
   const login = () => {
     if (innerWidth < 768) {
