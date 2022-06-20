@@ -1,14 +1,14 @@
 import React, { useContext, useRef } from 'react'
 import { ScrollContext } from '../utils/scroll-observer'
 import { SizeContext } from '../utils/size-observer'
-import { LoginContext } from '../utils/login-observer'
+// import { LoginContext } from '../utils/login-observer'
 import { loginCall } from '../state/ActionCalls'
 import { AuthContext } from '../state/AuthContext'
 
 const Login: React.FC = () => {
   const { innerWidth } = useContext(SizeContext)
   const { scrollY } = useContext(ScrollContext)
-  const { loginState, setLoginState } = useContext(LoginContext)
+  // const { loginState, setLoginState } = useContext(LoginContext)
   const email = useRef<HTMLInputElement>(null)
   const password = useRef<HTMLInputElement>(null)
   const { user, isFetching, error, dispatch } = useContext<any>(AuthContext)
@@ -33,7 +33,7 @@ const Login: React.FC = () => {
     } else {
       scrollY < 160 ? window.scrollTo(0, 960) : null //eslint-disable-line
     }
-    setLoginState(!loginState)
+    // setLoginState(!loginState)
   }
 
   const style = {
@@ -49,9 +49,11 @@ const Login: React.FC = () => {
           backgroundColor: `#21212783`,
         }}
         className={
-          loginState
-            ? 'z-[100] top-0 login w-[100vw] mx-auto h-[100vh] flex items-center justify-center'
-            : 'sticky z-[100] top-0 login w-[100vw] mx-auto h-[100vh] flex items-center justify-center'
+          // loginState
+             'z-[100] top-0 login w-[100vw] mx-auto h-[100vh] flex items-center justify-center'
+          // loginState
+          //   ? 'z-[100] top-0 login w-[100vw] mx-auto h-[100vh] flex items-center justify-center'
+          //   : 'sticky z-[100] top-0 login w-[100vw] mx-auto h-[100vh] flex items-center justify-center'
         }
       >
         <div
