@@ -1,7 +1,8 @@
 import Share from './Share'
 import Post from './Post'
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import axios from 'axios'
+import {AuthContext} from '../state/AuthContext'
 // import { Posts } from '../posts/postdata'
 
 const apiInitial = [
@@ -48,15 +49,16 @@ type Props = {
 
 const Timeline: React.FC<Props> = ({ username }) => {
   const [posts, setPosts] = useState<Api>(apiInitial)
+  const { user } = useContext(AuthContext)
   useEffect(() => {
     ;(async () => {
       const res = username
         ? await axios.get(`/posts/profile/${username}`)
-        : await axios.get('/posts/timeline/629b5b3484d1d2669e8d88f0')
+        : await axios.get(`/posts/timeline/${user._id}`)
       // console.log(res)
       setPosts(res.data)
     })()
-  }, [username])
+  }, [username, user._id])
 
   return (
     <div className="timeline flex-[6]">

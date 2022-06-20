@@ -3,7 +3,9 @@ import {
   Notifications,
   Search,
 } from '@mui/icons-material'
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
+import {Link} from 'react-router-dom'
+import { AuthContext } from '../state/AuthContext'
 
 const style = {
   topbarContainerBlur: `backdrop-blur duration-700 bg-[#161B2100] flex w-full items-center sticky top-0 z-50`,
@@ -12,7 +14,9 @@ const style = {
 }
 
 const Topbar: React.FC = () => {
+  const PUBLIC_FOLDER = process.env.REACT_APP_PUBLIC_FOLDER
   const [show, handleShow] = useState<boolean>(false)
+  const { user } = useContext<any>(AuthContext)
 
   const transitionNavBar = () => {
     if (window.scrollY < 10) return handleShow(false)
@@ -77,14 +81,17 @@ const Topbar: React.FC = () => {
             <span className={style.topbarIconBadge}>8</span>
           </div>
         </div>
+        <Link to={`/profile/${user?.username}`}>
         <img
-          src="/assets/person/1.jpeg"
+          src={user?.profilePicuture ? PUBLIC_FOLDER + user?.profilePicuture : PUBLIC_FOLDER + "/person/2.jpeg"}
           alt=""
           className="hover:opacity-[0.85] topbarImg w-14 h-14 m-1 mr-1 p-[1px] transtion-[radius] to-gray-400 duration-[.15s] parent rounded-[50px] cursor-pointer"
         />
+        </Link>
       </div>
     </div>
   )
 }
 
 export default Topbar
+

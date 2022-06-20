@@ -3,10 +3,19 @@ import AuthReducer from './AuthReducer'
 
 //最初のユーザー状態を定義
 const initialState = {
-  user: null,
+  user: {
+    _id: '629b5b3484d1d2669e8d88f0',
+    username: 'eternaleight',
+    email: 'abc@gmail.com',
+    password: 'abcdef',
+    profilePicuture: '',
+    followers: [],
+    followings: [],
+    isAdmin: false,
+  },
   isFetching: false,
   error: false,
-  dispatch: {} 
+  dispatch: {},
 }
 
 //状態をグローバルに管理する
@@ -16,7 +25,7 @@ type Props = {
   children: ReactNode
 }
 
-export const AuthContextProvider = ({ children }:Props) => {
+export const AuthContextProvider = ({ children }: Props) => {
   const [state, dispatch] = useReducer(AuthReducer, initialState)
   return (
     <AuthContext.Provider

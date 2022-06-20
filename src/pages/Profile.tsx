@@ -46,7 +46,7 @@ const Profile: React.FC = () => {
       const res = await axios.get(`/users?username=${username}`)
       setUser(res.data)
     })()
-  }, [])
+  }, [username])
 
   return (
     <>
