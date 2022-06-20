@@ -46,7 +46,7 @@ const Login: React.FC = () => {
     <>
       <div
         style={{
-          backgroundColor: `#21212783`,
+          backgroundColor: `#1d1f26`,
         }}
         className={
           // loginState

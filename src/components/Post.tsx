@@ -1,16 +1,13 @@
-import {
-  Favorite,
-  FavoriteBorder,
-  MoreVert,
-} from '@mui/icons-material'
+import { Favorite, FavoriteBorder, MoreVert } from '@mui/icons-material'
 import axios from 'axios'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useContext } from 'react'
 // import { Users } from '../posts/postdata'
 import { format } from 'timeago.js'
 import { Link } from 'react-router-dom'
+import { AuthContext } from '../state/AuthContext'
 
 type PostsArray = {
-  id?: number
+  _id?: number
   desc?: string
   photo?: string
   date?: string
@@ -37,36 +34,35 @@ type User = {
   updatedAt: string
   __v: number
   desc?: string
-  profilePicture: string
+  profilePicuture: string
 }
 
 const userInitial = {
-  _id: "" ,
-  username: "",
-  email: "",
-  password: "",
-  followers: "",
-  followings: "",
+  _id: '',
+  username: '',
+  email: '',
+  password: '',
+  followers: '',
+  followings: '',
   isAdmin: false,
-  createdAt: "",
-  updatedAt: "",
+  createdAt: '',
+  updatedAt: '',
   __v: 0,
-  desc: "",
-  profilePicture: "",
+  desc: '',
+  profilePicuture: '',
 }
 
 const Post: React.FC<Props> = ({ post }) => {
-  const [likeNum, setLikeNum] = useState<number|undefined>(
+  const [likeNum, setLikeNum] = useState<number | undefined>(
     post?.likes?.length
-)
+  )
   const [likeBool, setLikeBool] = useState<boolean>(false)
   const [user, setUser] = useState<User>(userInitial)
+  const { user: currentUser } = useContext(AuthContext)
 
   useEffect(() => {
     ;(async () => {
-      const res = await axios.get(
-        `/users?userId=${post.userId}`
-      )
+      const res = await axios.get(`/users?userId=${post.userId}`)
       // console.log(res.data)
       setUser(res.data)
     })()
@@ -79,7 +75,15 @@ const Post: React.FC<Props> = ({ post }) => {
   //   console.log(user)
   // }, [])
 
-  const handleLike = () => {
+  const handleLike = async () => {
+    try {
+      await axios.put(`/posts/${post._id}/like`, {
+        userId: currentUser._id,
+      })
+    } catch (err) {
+      console.log(err)
+    }
+
     if (likeNum !== undefined) {
       setLikeNum(likeBool ? likeNum - 1 : likeNum + 1)
     }
@@ -91,12 +95,19 @@ const Post: React.FC<Props> = ({ post }) => {
       <div className="postWrapper p-[10px]">
         <div className="flex justify-center justify-between postTop">
           <div className="flex items-center postTopLeft">
-            <Link onClick={() => window.scrollTo(0,0)} to={`/profile/${user.username}`}>
-            <img
-              src={user.profilePicture || "/assets/person/2.jpeg"}
-              alt=""
-              className="hover:opacity-[0.85] cursor-pointer duration-[0.15s] ease-out postProfileImg w-[32px] h-[32px] rounded-full object-cover"
-            />
+            <Link
+              onClick={() => window.scrollTo(0, 0)}
+              to={`/profile/${user.username}`}
+            >
+              <img
+                src={
+                  user.profilePicuture
+                    ? PUBLIC_FOLDER + user.profilePicuture
+                    : PUBLIC_FOLDER + '/person/2.jpeg'
+                }
+                alt=""
+                className="hover:opacity-[0.85] cursor-pointer duration-[0.15s] ease-out postProfileImg w-[32px] h-[32px] rounded-full object-cover"
+              />
             </Link>
             <span className="postUserName text-[15px] font-semibold mx-[10px]">
               {user.username}
