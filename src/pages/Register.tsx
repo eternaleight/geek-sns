@@ -1,13 +1,44 @@
-import React, { useContext } from 'react'
+import React, { useContext, useRef } from 'react'
 import { ScrollContext } from '../utils/scroll-observer'
 import { SizeContext } from '../utils/size-observer'
 import { LoginContext } from '../utils/login-observer'
+import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 
 const Register: React.FC = () => {
   const { innerWidth } = useContext(SizeContext)
   const { scrollY } = useContext(ScrollContext)
-  const { loginState, setLoginState } =
-    useContext(LoginContext)
+  const { loginState, setLoginState } = useContext(LoginContext)
+  const username = useRef<HTMLInputElement>(null)
+  const email = useRef<HTMLInputElement>(null)
+  const password = useRef<HTMLInputElement>(null)
+  const passwordConfirmation = useRef<HTMLInputElement>(null)
+  const navigate = useNavigate()
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    // パスワードと確認用パスワードが合っているかどうかを確認
+    if (password.current?.value !== passwordConfirmation.current?.value) {
+      passwordConfirmation.current?.setCustomValidity('パスワードが違います')
+    } else {
+      try {
+        //registerApiを叩く
+        const user = {
+          username: username.current?.value,
+          email: email.current?.value,
+          password: password.current?.value,
+        }
+        await axios.post('/auth/register', user)
+        navigate('/login')
+      } catch (err) {
+        console.log(err)
+      }
+    }
+    console.log(username.current?.value)
+    console.log(email.current?.value)
+    console.log(password.current?.value)
+    console.log(passwordConfirmation.current?.value)
+  }
 
   const login = () => {
     if (innerWidth < 768) {
@@ -60,23 +91,29 @@ const Register: React.FC = () => {
           </div>
           <div className="loginRight flex-[1]  text-[22px] flex flex-col justify-center">
             <div className="loginRight">
-              <div className="loginBox h-[400px] p-[20px] flex flex-col justify-between bg-zinc-700 rounded-[10px] text-[16px]">
+              <form
+                onSubmit={(e) => handleSubmit(e)}
+                className="loginBox h-[400px] p-[20px] flex flex-col justify-between bg-zinc-700 rounded-[10px] text-[16px]"
+              >
                 <p className="loginMsg text-[16px] relative top-[-8px]">
                   新規登録はこちらから
                 </p>
                 <input
+                  ref={username}
                   className={style.loginInput}
                   type="text"
                   placeholder=" Username"
                   required
                 />
                 <input
+                  ref={email}
                   className={style.loginInput}
                   type="email"
                   placeholder=" Email"
                   required
                 />
                 <input
+                  ref={password}
                   className={style.loginInput}
                   type="password"
                   placeholder=" Password"
@@ -84,9 +121,11 @@ const Register: React.FC = () => {
                   required
                 />
                 <input
+                  ref={passwordConfirmation}
                   className={style.loginInput}
                   type="password"
                   placeholder=" Confirmation password"
+                  minLength={6}
                   required
                 />
                 brilliant ✨
@@ -95,6 +134,7 @@ const Register: React.FC = () => {
                 {innerWidth < 768 ? (
                   <>
                     <button
+                      type="submit"
                       onClick={() => login()}
                       className={style.loginButton}
                     >
@@ -114,6 +154,7 @@ const Register: React.FC = () => {
                 ) : (
                   <>
                     <button
+                      type="submit"
                       onClick={() => login()}
                       className={style.loginButton2}
                     >
@@ -122,12 +163,10 @@ const Register: React.FC = () => {
                     <span className="loginForget text-[15px]">
                       パスワード忘れた方へ
                     </span>
-                    <button className={style.loginButton2}>
-                      ログイン
-                    </button>
+                    <button className={style.loginButton2}>ログイン</button>
                   </>
                 )}
-              </div>
+              </form>
             </div>
           </div>
         </div>

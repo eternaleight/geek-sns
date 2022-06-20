@@ -15,8 +15,8 @@ const Login: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    console.log(email.current?.value)
-    console.log(password.current?.value)
+    // console.log(email.current?.value)
+    // console.log(password.current?.value)
     loginCall(
       {
         email: email.current?.value,
