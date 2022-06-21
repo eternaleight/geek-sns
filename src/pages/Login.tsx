@@ -50,7 +50,7 @@ const Login: React.FC = () => {
         }}
         className={
           // loginState
-             'z-[100] top-0 login w-[100vw] mx-auto h-[100vh] flex items-center justify-center'
+          'z-[100] top-0 login w-[100vw] mx-auto h-[100vh] flex items-center justify-center'
           // loginState
           //   ? 'z-[100] top-0 login w-[100vw] mx-auto h-[100vh] flex items-center justify-center'
           //   : 'sticky z-[100] top-0 login w-[100vw] mx-auto h-[100vh] flex items-center justify-center'

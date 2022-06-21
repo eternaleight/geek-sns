@@ -4,6 +4,9 @@ import {
   Image,
   SentimentVerySatisfied,
 } from '@mui/icons-material'
+import { useRef, useContext } from 'react'
+import axios from 'axios'
+import { AuthContext } from '../state/AuthContext'
 
 const style = {
   share: `border-[0.9px] border-gray-500 w-full max-xs:h-[150px] h-[170px] shadow-[3px_7px_13px_-22px] mb-2 rounded-[10px]`,
@@ -21,51 +24,61 @@ const style = {
 }
 
 const Share = () => {
+  const PUBLIC_FOLDER = process.env.REACT_APP_PUBLIC_FOLDER
+  const { user } = useContext(AuthContext)
+  const desc = useRef<HTMLInputElement>(null)
+  console.log(desc.current?.value)
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+
+    const newPost = {
+      userId: user._id,
+      desc: desc.current?.value,
+    }
+
+    try {
+      await axios.post('/posts', newPost)
+      window.location.reload()
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
   return (
     <div className={style.share}>
       <div className={style.shareWrapper}>
         <div className={style.shareTop}>
           <img
-            src="/assets/person/1.jpeg"
+            src={
+              user.profilePicuture
+                ? PUBLIC_FOLDER + user.profilePicuture
+                : PUBLIC_FOLDER + '/person/1.jpeg'
+            }
             alt=""
             className="hover:opacity-[0.85] cursor-pointer duration-[0.15s] w-[50px] h-[50px] mb-1 mr-[10px] object-cover rounded-full shareProfileImg"
           />
           <input
+            ref={desc}
             type="text"
             className={style.shareInput}
             placeholder="what's happening?"
           />
         </div>
         <hr className={style.shareHr} />
-        <div className={style.shareButtons}>
+
+        <form onSubmit={(e) => handleSubmit(e)} className={style.shareButtons}>
           <div className={style.shareOptions}>
-            <div className={style.shareOptions}>
-              <Image
-                className={style.shareIcon}
-                htmlColor=""
-              />
-              <div className="relative flex flex-col mr-[-6px]">
-                <span
-                  className={`${style.shareOptionText}`}
-                >
-                  Media
-                </span>
-                <div className={style.mediaDiv}></div>
-                <span
-                  className={`${style.shareOptionText2}`}
-                >
-                  写真
-                </span>
-              </div>
+            <Image className={style.shareIcon} htmlColor="" />
+            <div className="relative flex flex-col mr-[-6px]">
+              <span className={`${style.shareOptionText}`}>Media</span>
+              <div className={style.mediaDiv}></div>
+              <span className={`${style.shareOptionText2}`}>写真</span>
             </div>
             <div className={style.shareOptions}>
               <Gif className={style.shareIcon} />
               <div className="relative flex flex-col">
-                <span
-                  className={`${style.shareOptionText}`}
-                >
-                  GIF
-                </span>
+                <span className={`${style.shareOptionText}`}>GIF</span>
                 <div className={style.mediaDiv}></div>
                 <span
                   className={`${style.shareOptionText2} left-[-2px] h-[15px]`}
@@ -75,13 +88,9 @@ const Share = () => {
               </div>
             </div>
             <div className={style.shareOptions}>
-              <SentimentVerySatisfied
-                className={style.shareIcon}
-              />
+              <SentimentVerySatisfied className={style.shareIcon} />
               <div className="relative flex flex-col">
-                <span className={style.shareOptionText}>
-                  Emoji
-                </span>
+                <span className={style.shareOptionText}>Emoji</span>
                 <div className={style.mediaDiv}></div>
                 <span
                   className={`${style.shareOptionText2} w-[43px] left-[-2px]`}
@@ -93,20 +102,16 @@ const Share = () => {
             <div className={style.shareOptions}>
               <Analytics className={`${style.shareIcon}`} />
               <div className="relative flex flex-col">
-                <span className={style.shareOptionText}>
-                  Poll
-                </span>
+                <span className={style.shareOptionText}>Poll</span>
                 <div className="absolute top-0 left-[-26px] w-[58px] cursor-pointer h-[24px] bg-[#00000000] mediaButton"></div>
-                <span
-                  className={`${style.shareOptionText2} left-[-2px]`}
-                >
+                <span className={`${style.shareOptionText2} left-[-2px]`}>
                   投票
                 </span>
               </div>
             </div>
           </div>
           <div className="relative flex flex-col">
-            <button className={style.shareButton}>
+            <button type="submit" className={style.shareButton}>
               Post
             </button>
             <span
@@ -115,7 +120,7 @@ const Share = () => {
               投稿
             </span>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   )
