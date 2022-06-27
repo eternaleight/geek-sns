@@ -2,7 +2,7 @@ import Share from './Share'
 import Post from './Post'
 import { useContext, useEffect, useState } from 'react'
 import axios from 'axios'
-import {AuthContext} from '../state/AuthContext'
+import { AuthContext } from '../state/AuthContext'
 // import { Posts } from '../posts/postdata'
 
 const apiInitial = [
@@ -10,14 +10,14 @@ const apiInitial = [
     config: {},
     data: [
       {
-        createdAt: "",
-        desc: "",
-        img: "",
-        likes: [""],
-        updatedAt: "",
-        userId: "",
-        __v: "",
-        _id: "",
+        createdAt: '',
+        desc: '',
+        img: '',
+        likes: [''],
+        updatedAt: '',
+        userId: '',
+        __v: '',
+        _id: '',
       },
     ],
     headers: {},
@@ -25,7 +25,7 @@ const apiInitial = [
       XMLHttpRequest: {},
     },
     status: 0,
-    statusText: "",
+    statusText: '',
   },
 ]
 
@@ -56,7 +56,12 @@ const Timeline: React.FC<Props> = ({ username }) => {
         ? await axios.get(`/posts/profile/${username}`)
         : await axios.get(`/posts/timeline/${user._id}`)
       // console.log(res)
-      setPosts(res.data)
+      setPosts(
+        res.data.sort((post1: any, post2: any) => {
+          // console.log(new Date(post2.createdAt).valueOf())
+          return new Date(post2.createdAt).valueOf() - new Date(post1.createdAt).valueOf()
+        })
+      )
     })()
   }, [username, user._id])
 
@@ -64,7 +69,7 @@ const Timeline: React.FC<Props> = ({ username }) => {
     <div className="timeline flex-[6]">
       <div className="timelineWrapper p-[20px]">
         <Share />
-        {posts.map((post: any,id) => (
+        {posts.map((post: any, id) => (
           <Post post={post} key={id} />
         ))}
       </div>

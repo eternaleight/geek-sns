@@ -4,7 +4,7 @@ import {
   Image,
   SentimentVerySatisfied,
 } from '@mui/icons-material'
-import { useRef, useContext } from 'react'
+import { useRef, useContext, useState } from 'react'
 import axios from 'axios'
 import { AuthContext } from '../state/AuthContext'
 
@@ -27,7 +27,8 @@ const Share = () => {
   const PUBLIC_FOLDER = process.env.REACT_APP_PUBLIC_FOLDER
   const { user } = useContext(AuthContext)
   const desc = useRef<HTMLInputElement>(null)
-  console.log(desc.current?.value)
+  const [file, setFile] = useState<any>(null)
+  // console.log(file)
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -35,6 +36,21 @@ const Share = () => {
     const newPost = {
       userId: user._id,
       desc: desc.current?.value,
+      img: null
+    }
+
+    if (file) {
+      try {
+        const data = new FormData()
+        const fileName = Date.now() + file.name
+        data.append('name', fileName)
+        data.append('file', file)
+        newPost.img = fileName
+        //画像APIを叩く
+        await axios.post('/upload', data)
+      } catch (err) {
+        console.log(err)
+      }
     }
 
     try {
@@ -68,12 +84,21 @@ const Share = () => {
         <hr className={style.shareHr} />
 
         <form onSubmit={(e) => handleSubmit(e)} className={style.shareButtons}>
-          <div className={style.shareOptions}>
+          <label className={style.shareOptions} htmlFor="file">
             <Image className={style.shareIcon} htmlColor="" />
             <div className="relative flex flex-col mr-[-6px]">
               <span className={`${style.shareOptionText}`}>Media</span>
               <div className={style.mediaDiv}></div>
               <span className={`${style.shareOptionText2}`}>写真</span>
+              <input
+                type="file"
+                id="file"
+                accept=".png, .jpeg, .jpg"
+                style={{
+                  display: 'none',
+                }}
+                onChange={(e: any) => setFile(e.target.files[0])}
+              />
             </div>
             <div className={style.shareOptions}>
               <Gif className={style.shareIcon} />
@@ -109,7 +134,7 @@ const Share = () => {
                 </span>
               </div>
             </div>
-          </div>
+          </label>
           <div className="relative flex flex-col">
             <button type="submit" className={style.shareButton}>
               Post
