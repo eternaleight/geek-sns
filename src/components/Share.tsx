@@ -25,6 +25,7 @@ const style = {
 
 const Share = () => {
   const PUBLIC_FOLDER = process.env.REACT_APP_PUBLIC_FOLDER
+  const PUBLIC_HEROKU = process.env.REACT_APP_HEROKU
   const { user } = useContext(AuthContext)
   const desc = useRef<HTMLInputElement>(null)
   const [file, setFile] = useState<any>(null)
@@ -47,14 +48,14 @@ const Share = () => {
         data.append('file', file)
         newPost.img = fileName
         //画像APIを叩く
-        await axios.post('/upload', data)
+        await axios.post(`${PUBLIC_HEROKU}/upload`, data)
       } catch (err) {
         console.log(err)
       }
     }
 
     try {
-      await axios.post('/posts', newPost)
+      await axios.post(`${PUBLIC_HEROKU}/posts`, newPost )
       window.location.reload()
     } catch (err) {
       console.log(err)

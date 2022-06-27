@@ -38,12 +38,13 @@ const userInitial = {
 const Profile: React.FC = () => {
   const { innerWidth } = useContext(SizeContext)
   const PUBLIC_FOLDER = process.env.REACT_APP_PUBLIC_FOLDER
+  const PUBLIC_HEROKU = process.env.REACT_APP_HEROKU
   const [user, setUser] = useState<User>(userInitial)
   const username = useParams().username
 
   useEffect(() => {
     ;(async () => {
-      const res = await axios.get(`/users?username=${username}`)
+      const res = await axios.get(`${PUBLIC_HEROKU}/users?username=${username}`)
       setUser(res.data)
     })()
   }, [username])

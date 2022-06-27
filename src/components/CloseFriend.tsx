@@ -16,9 +16,7 @@ const CloseFriend: React.FC<Props> = ({ user }) => {
           alt=""
           className="hover:opacity-[0.85] cursor-pointer duration-[0.15s] object-cover w-[3rem] h-[3rem] rounded-full mt-2 sidebarFriendImg"
         />
-        <span className="sidebarFriendName">
-          {user.username}
-        </span>
+        <span className="sidebarFriendName">{user.username}</span>
       </li>
     </>
   )

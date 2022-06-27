@@ -14,6 +14,7 @@ const Register: React.FC = () => {
   const password = useRef<HTMLInputElement>(null)
   const passwordConfirmation = useRef<HTMLInputElement>(null)
   const navigate = useNavigate()
+  const PUBLIC_HEROKU = process.env.REACT_APP_HEROKU
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -28,7 +29,7 @@ const Register: React.FC = () => {
           email: email.current?.value,
           password: password.current?.value,
         }
-        await axios.post('/auth/register', user)
+        await axios.post(`${PUBLIC_HEROKU}/auth/register`, user)
         navigate('/login')
       } catch (err) {
         console.log(err)

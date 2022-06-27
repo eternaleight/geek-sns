@@ -62,13 +62,14 @@ const Post: React.FC<Props> = ({ post }) => {
 
   useEffect(() => {
     ;(async () => {
-      const res = await axios.get(`/users?userId=${post.userId}`)
+      const res = await axios.get(`${PUBLIC_HEROKU}/users?userId=${post.userId}`)
       // console.log(res.data)
       setUser(res.data)
     })()
   }, [post.userId])
 
   const PUBLIC_FOLDER = process.env.REACT_APP_PUBLIC_FOLDER
+  const PUBLIC_HEROKU = process.env.REACT_APP_HEROKU
 
   // const user = Users.filter((user) => user.id === 1)
   // useEffect(() => {
@@ -77,7 +78,7 @@ const Post: React.FC<Props> = ({ post }) => {
 
   const handleLike = async () => {
     try {
-      await axios.put(`/posts/${post._id}/like`, {
+      await axios.put(`${PUBLIC_HEROKU}/posts/${post._id}/like`, {
         userId: currentUser._id,
       })
     } catch (err) {

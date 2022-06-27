@@ -50,11 +50,12 @@ type Props = {
 const Timeline: React.FC<Props> = ({ username }) => {
   const [posts, setPosts] = useState<Api>(apiInitial)
   const { user } = useContext(AuthContext)
+  const PUBLIC_HEROKU = process.env.REACT_APP_HEROKU
   useEffect(() => {
     ;(async () => {
       const res = username
-        ? await axios.get(`/posts/profile/${username}`)
-        : await axios.get(`/posts/timeline/${user._id}`)
+        ? await axios.get(`${PUBLIC_HEROKU}/posts/profile/${username}`)
+        : await axios.get(`${PUBLIC_HEROKU}/posts/timeline/${user._id}`)
       // console.log(res)
       setPosts(
         res.data.sort((post1: any, post2: any) => {
