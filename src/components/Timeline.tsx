@@ -3,7 +3,6 @@ import Post from './Post'
 import { useContext, useEffect, useState } from 'react'
 import axios from 'axios'
 import { AuthContext } from '../state/AuthContext'
-// import { Posts } from '../posts/postdata'
 
 const apiInitial = [
   {
@@ -56,13 +55,15 @@ const Timeline: React.FC<Props> = ({ username }) => {
       const res = username
         ? await axios.get(`${PUBLIC_HEROKU}/posts/profile/${username}`)
         : await axios.get(`${PUBLIC_HEROKU}/posts/timeline/${user._id}`)
-      // console.log(res)
       setPosts(
         res.data.sort((post1: any, post2: any) => {
-          // console.log(new Date(post2.createdAt).valueOf())
-          return new Date(post2.createdAt).valueOf() - new Date(post1.createdAt).valueOf()
+          return (
+            new Date(post2.createdAt).valueOf() -
+            new Date(post1.createdAt).valueOf()
+          )
         })
       )
+  console.log(user)
     })()
   }, [username, user._id])
 

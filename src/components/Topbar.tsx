@@ -1,10 +1,6 @@
-import {
-  Chat,
-  Notifications,
-  Search,
-} from '@mui/icons-material'
+import { Chat, Notifications, Search } from '@mui/icons-material'
 import React, { useState, useEffect, useContext } from 'react'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { AuthContext } from '../state/AuthContext'
 
 const style = {
@@ -25,24 +21,17 @@ const Topbar: React.FC = () => {
 
   useEffect(() => {
     window.addEventListener('scroll', transitionNavBar)
-    return () =>
-      window.removeEventListener('scroll', transitionNavBar)
+    return () => window.removeEventListener('scroll', transitionNavBar)
   }, [])
 
   return (
-    <div
-      className={
-        show
-          ? style.topbarContainerBlur
-          : style.topbarContainer
-      }
-    >
+    <div className={show ? style.topbarContainerBlur : style.topbarContainer}>
       <div className="topbarLeft flex-[3]">
         <span
           onClick={() => window.scrollTo(0, 0)}
           className="absolute cursor-pointer ml-5 text-2xl font-bold top-[18px] font-sans logo"
         >
-          Geek-SNS
+          <Link to="/">Geek-SNS</Link>
         </span>
       </div>
       <div className="topbarCenter flex flex-[5]">
@@ -82,11 +71,15 @@ const Topbar: React.FC = () => {
           </div>
         </div>
         <Link to={`/profile/${user?.username}`}>
-        <img
-          src={user?.profilePicuture ? PUBLIC_FOLDER + user?.profilePicuture : PUBLIC_FOLDER + "/person/2.jpeg"}
-          alt=""
-          className="hover:opacity-[0.85] topbarImg w-14 h-14 m-1 mr-1 p-[1px] transtion-[radius] to-gray-400 duration-[.15s] parent rounded-[50px] cursor-pointer"
-        />
+          <img
+            src={
+              user?.profilePicuture
+                ? PUBLIC_FOLDER + user?.profilePicuture
+                : PUBLIC_FOLDER + '/person/2.jpeg'
+            }
+            alt=""
+            className="hover:opacity-[0.85] topbarImg w-14 h-14 m-1 mr-1 p-[1px] transtion-[radius] to-gray-400 duration-[.15s] parent rounded-[50px] cursor-pointer"
+          />
         </Link>
       </div>
     </div>
@@ -94,4 +87,3 @@ const Topbar: React.FC = () => {
 }
 
 export default Topbar
-

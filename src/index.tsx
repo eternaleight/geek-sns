@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom/client'
 import App from './App'
 import ScrollObserver from './utils/scroll-observer'
 import SizeObserver from './utils/size-observer'
-// import LoginObserver from './utils/login-observer'
 import { AuthContextProvider } from './state/AuthContext'
 
 const root = ReactDOM.createRoot(
@@ -13,11 +12,9 @@ root.render(
   <React.StrictMode>
     <ScrollObserver>
       <SizeObserver>
-        {/* <LoginObserver> */}
-          <AuthContextProvider>
-            <App />
-          </AuthContextProvider>
-        {/* </LoginObserver> */}
+        <AuthContextProvider>
+          <App />
+        </AuthContextProvider>
       </SizeObserver>
     </ScrollObserver>
   </React.StrictMode>

@@ -1,7 +1,6 @@
 import { Favorite, FavoriteBorder, MoreVert } from '@mui/icons-material'
 import axios from 'axios'
 import { useEffect, useState, useContext } from 'react'
-// import { Users } from '../posts/postdata'
 import { format } from 'timeago.js'
 import { Link } from 'react-router-dom'
 import { AuthContext } from '../state/AuthContext'
