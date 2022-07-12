@@ -10,6 +10,8 @@ import CloseFriend from './CloseFriend'
 import { Users } from '../posts/postdata'
 import { Link, useNavigate } from 'react-router-dom'
 import { useParams } from 'react-router-dom'
+import { AuthContext } from '../state/AuthContext'
+import {useContext} from 'react'
 
 type UserType = {
   id?: number
@@ -28,6 +30,7 @@ const style = {
 
 const Sidebar: React.FC = () => {
 
+  const { user } = useContext<any>(AuthContext)
   const username = useParams().username
   const navigate = useNavigate()
 
@@ -67,7 +70,7 @@ const Sidebar: React.FC = () => {
               ブックマーク
             </span>
           </li>
-          <Link to={`/profile/${username}`}>
+        <Link to={`/profile/${user?.username}`}>
           <li className={style.sidebarListItem}>
             <span className={style.sidebarListText}>
               <div className={style.transparent}></div>
