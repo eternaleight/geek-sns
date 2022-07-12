@@ -63,7 +63,7 @@ const Timeline: React.FC<Props> = ({ username }) => {
           )
         })
       )
-  console.log(user)
+  // console.log(user)
     })()
   }, [username, user._id])
 

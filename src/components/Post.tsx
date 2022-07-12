@@ -61,7 +61,9 @@ const Post: React.FC<Props> = ({ post }) => {
 
   useEffect(() => {
     ;(async () => {
-      const res = await axios.get(`${PUBLIC_HEROKU}/users?userId=${post.userId}`)
+      const res = await axios.get(
+        `${PUBLIC_HEROKU}/users?userId=${post.userId}`
+      )
       // console.log(res.data)
       setUser(res.data)
     })()
@@ -88,6 +90,18 @@ const Post: React.FC<Props> = ({ post }) => {
       setLikeNum(likeBool ? likeNum - 1 : likeNum + 1)
     }
     setLikeBool(!likeBool)
+  }
+
+  const handleDelete = async () => {
+    try {
+      await axios.delete(`${PUBLIC_HEROKU}/posts/${post._id}`, {
+        data: {
+          userId: currentUser._id,
+        },
+      })
+    } catch (err) {
+      console.log(err)
+    }
   }
 
   return (
@@ -117,7 +131,15 @@ const Post: React.FC<Props> = ({ post }) => {
             </span>
           </div>
           <div className="postTopRight">
-            <MoreVert />
+            <MoreVert
+              className="cursor-pointer"
+              onClick={async() => {
+                {
+                  await handleDelete()
+                  window.location.reload()
+                }
+              }}
+            />
           </div>
         </div>
         <div className="postCenter mx-[20px]">
