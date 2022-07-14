@@ -29,7 +29,6 @@ const Share = () => {
   const { user } = useContext(AuthContext)
   const desc = useRef<HTMLInputElement>(null)
   const [file, setFile] = useState<any>(null)
-  // console.log(file)
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()

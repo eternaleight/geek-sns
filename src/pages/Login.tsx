@@ -21,7 +21,6 @@ const Login: React.FC = () => {
       dispatch
     )
   }
-  console.log(user)
 
   const login = () => {
     if (innerWidth < 768) {
