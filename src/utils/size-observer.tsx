@@ -17,9 +17,7 @@ type Props = {
   children: ReactNode
 }
 const SizeObserver: React.FC<Props> = ({ children }) => {
-  const [innerWidth, setInnnerWidth] = useState<number>(
-    window.innerWidth < 868 ? 867 : 869
-  )
+  const [innerWidth, setInnnerWidth] = useState<number>(window.innerWidth)
 
   const windowWidth = useCallback(() => {
     setInnnerWidth(window.innerWidth)

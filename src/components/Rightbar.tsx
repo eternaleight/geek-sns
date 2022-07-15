@@ -29,7 +29,7 @@ type User = {
 const Rightbar = ({ user }:any) => {
   const HomeRightBar = () => {
     return (
-      <>
+      <div className="max-sm:hidden">
         <div className="flex items-center eventContainer">
           <span className="eventText font-[300] text-[15px]">
             nvim/vim colorscheme<br/>bubblegum-colorscheme
@@ -110,7 +110,7 @@ const Rightbar = ({ user }:any) => {
           </div>
         </a>
         <p className={`${style.promotionName}`}></p>
-      </>
+      </div>
     )
   }
 

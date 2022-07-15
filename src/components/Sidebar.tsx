@@ -35,7 +35,7 @@ const Sidebar: React.FC = () => {
   const navigate = useNavigate()
 
   return (
-    <div className="flex-[2.5] h-screen">
+    <div className="flex-[2.5] h-screen max-sm:hidden">
       <div className={style.sidebarWrapper}>
         <ul className={style.sidebarList}>
           <Link to="/">
