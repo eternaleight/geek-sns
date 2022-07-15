@@ -139,13 +139,13 @@ const Post: React.FC<Props> = ({ post }) => {
         </div>
         <div className="postCenter mx-[20px] mb-[5px] ">
           <span className="postText text-[16px]">{post.desc}</span>
-          {post.img ?
+          {post.img !== undefined ?
           <img
             className="postImg max-w-full max-h-[500px] object-contain"
             src={`${PUBLIC_FOLDER}${post.img}`}
             alt=""
           />
-          :null}
+          : undefined}
         </div>
         <div className="flex items-center justify-between postBottom">
           <div className="flex postBottomLeft">
