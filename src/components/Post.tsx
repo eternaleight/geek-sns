@@ -140,8 +140,8 @@ const Post: React.FC<Props> = ({ post }) => {
         <div className="postCenter mx-[20px]">
           <span className="postText">{post.desc}</span>
           <img
-            className="postImg my-[20px] w-full max-h-[500px] object-contain"
-            src={`${PUBLIC_FOLDER}${post.img}`}
+            className="postImg my-[20px] max-w-full max-h-[500px] object-contain"
+            src={`${PUBLIC_FOLDER}${post.img}` ? `${PUBLIC_FOLDER}${post.img}` : undefined}
             alt=""
           />
         </div>
