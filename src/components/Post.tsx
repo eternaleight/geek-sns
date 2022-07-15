@@ -118,7 +118,7 @@ const Post: React.FC<Props> = ({ post }) => {
                 className="hover:opacity-[0.85] cursor-pointer duration-[0.15s] ease-out postProfileImg w-[32px] h-[32px] rounded-full object-cover"
               />
             </Link>
-            <span className="postUserName text-[15px] font-semibold mx-[10px]">
+            <span className="postUserName text-[17px] font-semibold mx-[10px]">
               {user.username}
             </span>
             <span className="postData text-[12px]">
@@ -137,13 +137,15 @@ const Post: React.FC<Props> = ({ post }) => {
             />
           </div>
         </div>
-        <div className="postCenter mx-[20px]">
-          <span className="postText">{post.desc}</span>
+        <div className="postCenter mx-[20px] mb-[5px] ">
+          <span className="postText text-[16px]">{post.desc}</span>
+          {post.img ?
           <img
-            className="postImg my-[20px] max-w-full max-h-[500px] object-contain"
-            src={`${PUBLIC_FOLDER}${post.img}` ? `${PUBLIC_FOLDER}${post.img}` : undefined}
+            className="postImg max-w-full max-h-[500px] object-contain"
+            src={`${PUBLIC_FOLDER}${post.img}`}
             alt=""
           />
+          :null}
         </div>
         <div className="flex items-center justify-between postBottom">
           <div className="flex postBottomLeft">
