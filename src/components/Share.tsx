@@ -69,7 +69,7 @@ const Share = () => {
             src={
               user.profilePicuture
                 ? PUBLIC_FOLDER + user.profilePicuture
-                : PUBLIC_FOLDER + '/person/1.jpeg'
+                : PUBLIC_FOLDER + '/person/2.jpeg'
             }
             alt=""
             className="hover:opacity-[0.85] cursor-pointer duration-[0.15s] w-[50px] h-[50px] mb-1 mr-[10px] object-cover rounded-full shareProfileImg"
