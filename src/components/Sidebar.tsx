@@ -85,7 +85,7 @@ const Sidebar: React.FC = () => {
               <Settings className={style.sidebarListIcon} />
               <button onClick={() => {
                 localStorage.removeItem("user")
-                location.reload();
+                window.location.reload();
                 }}>
               ログアウト
               </button>
