@@ -11,10 +11,10 @@ $easeOutQuint: cubic-bezier(0.23, 1, 0.32, 1);
   height: 100%;
   z-index: 10;
   &:hover {
-    color: #fff;
+    color: #112;
     &:after {
       width: 100%;
-      animation: rounded 0.5s;
+      animation: rounded 0.7s ease-out;
     }
   }
   &:after {
@@ -25,27 +25,23 @@ $easeOutQuint: cubic-bezier(0.23, 1, 0.32, 1);
     bottom: 0;
     width: 0;
     display: block;
-    background: #18181B;
+    background: #99f;
     z-index: -1;
-    transition: 0.05s;
+    transition: 0.5s;
   }
 }
 
 @keyframes rounded 
 {
   0% {
-    border-radius: 20px;
   }
   100% {
-    border-radius: 0px;
   }
 }
 
 @keyframes rounded-reverse 
 {
   0% {
-    background: #f99;
-    background: transparent;
   }
   7% {
     background: transparent;

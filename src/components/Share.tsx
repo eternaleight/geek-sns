@@ -9,10 +9,10 @@ import axios from 'axios'
 import { AuthContext } from '../state/AuthContext'
 
 const style = {
-  share: `border-[0.9px] border-gray-500 w-full max-xs:h-[150px] h-[170px] shadow-[3px_7px_13px_-22px] mb-2 rounded-[10px]`,
+  share: `border-[0.9px] w-full max-xs:h-[150px] h-[170px] shadow-[3px_7px_13px_-22px] mb-2 rounded-[10px]`,
   shareWrapper: `p-[10px]`,
   shareTop: `flex items-center`,
-  shareInput: ` border-none w-full focus:outline-none text-white bg-[#1e2028]`,
+  shareInput: ` border-none w-full focus:outline-none text-white`,
   shareHr: `m-[20px]`,
   shareButtons: `flex justify-between`,
   shareOptions: `flex xs:ml-[10px] items-center`,
@@ -77,7 +77,7 @@ const Share = () => {
           <input
             ref={desc}
             type="text"
-            className={style.shareInput}
+            className={`${style.shareInput} bg-[#383a59]`}
             placeholder="what's happening?"
           />
         </div>

@@ -31,15 +31,7 @@ const Rightbar = ({ user }:any) => {
     return (
       <div className="max-sm:hidden">
         <div className="flex items-center eventContainer">
-          <span className="eventText font-[300] text-[15px]">
-            nvim/vim colorscheme<br/>bubblegum-colorscheme
-          </span>
         </div>
-        <img
-          src="assets/post/hakusan-bubble-01.png"
-          alt=""
-          className="w-full eventImg rounded-[10px] my-[25px]"
-        />
         <h4 className="rightTItle mb-[20px]">
           オンラインの友達
         </h4>

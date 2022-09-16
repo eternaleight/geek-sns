@@ -3,6 +3,7 @@ import { ScrollContext } from '../utils/scroll-observer'
 import { SizeContext } from '../utils/size-observer'
 import { loginCall } from '../state/ActionCalls'
 import { AuthContext } from '../state/AuthContext'
+import {useNavigate} from 'react-router-dom'
 
 const Login: React.FC = () => {
   const { innerWidth } = useContext(SizeContext)
@@ -10,6 +11,7 @@ const Login: React.FC = () => {
   const email = useRef<HTMLInputElement>(null)
   const password = useRef<HTMLInputElement>(null)
   const { user, isFetching, error, dispatch } = useContext<any>(AuthContext)
+  const navigate = useNavigate()
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -108,7 +110,7 @@ const Login: React.FC = () => {
                     <span className="loginForget text-[15px]">
                       パスワード忘れた方へ
                     </span>
-                    <button className={style.loginButton}>
+                    <button className={style.loginButton} onClick={() => navigate('/')}>
                       <span className="relative w-[100%] py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
                         アカウント作成
                       </span>
@@ -125,7 +127,7 @@ const Login: React.FC = () => {
                     <span className="loginForget text-[15px]">
                       パスワード忘れた方へ
                     </span>
-                    <button className={style.loginButton2}>
+                    <button className={style.loginButton2} onClick={() => navigate('/')}>
                       アカウント作成
                     </button>
                   </>

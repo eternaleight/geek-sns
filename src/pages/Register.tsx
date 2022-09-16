@@ -42,7 +42,7 @@ const Register: React.FC = () => {
   }
 
   const login = () => {
-    if (innerWidth < 768) {
+    if (innerWidth < 968) {
       scrollY < 160 ? window.scrollTo(0, 660) : null //eslint-disable-line
     } else {
       scrollY < 160 ? window.scrollTo(0, 960) : null //eslint-disable-line
@@ -70,15 +70,15 @@ const Register: React.FC = () => {
       >
         <div
           className={
-            innerWidth < 768
+            innerWidth < 968
               ? 'loginWrapper w-[70%] h-[70%] flex flex-col mb-28'
               : 'loginWrapper max-w-[1200px] w-[70%] h-[70%] flex'
           }
         >
-          <div className="loginleft flex-[1] flex flex-col justify-center">
+          <div className="loginleft flex-[1] flex flex-col justify-center mx-8">
             <h3
               onClick={() =>
-                innerWidth < 768
+                innerWidth < 968
                   ? window.scrollTo(0, 660)
                   : window.scrollTo(0, 960)
               }
@@ -87,7 +87,7 @@ const Register: React.FC = () => {
               Geek-SNS
             </h3>
             <span className="loginDesc flex-[0] text-[20px] flex flex-col justify-center">
-              hacker, programmer, 個人開発者のためのSNS
+              hacker, programmer, 個人開発者のSNS
             </span>
           </div>
           <div className="loginRight flex-[1]  text-[22px] flex flex-col justify-center">
@@ -132,7 +132,7 @@ const Register: React.FC = () => {
                 brilliant ✨
                 <br />
                 hacker community !! 💎
-                {innerWidth < 768 ? (
+                {innerWidth < 968 ? (
                   <>
                     <button
                       type="submit"
@@ -144,10 +144,10 @@ const Register: React.FC = () => {
                       </span>
                     </button>
                     <span className="loginForget text-[15px]">
-                      パスワード忘れた方へ
+                      ログインの方はこちら
                     </span>
-                    <button className={style.loginButton}>
-                      <span className="relative w-[100%] py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+                    <button className={style.loginButton} onClick={() => navigate('/login')}>
+                      <span className="relative w-[100%] py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0" >
                         ログイン
                       </span>
                     </button>
@@ -162,9 +162,9 @@ const Register: React.FC = () => {
                       新規登録/サインアップ
                     </button>
                     <span className="loginForget text-[15px]">
-                      パスワード忘れた方へ
+                      ログインの方はこちら
                     </span>
-                    <button className={style.loginButton2}>ログイン</button>
+                    <button onClick={() => navigate('/login')} className={style.loginButton2}>ログイン</button>
                   </>
                 )}
               </form>
