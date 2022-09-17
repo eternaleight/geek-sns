@@ -71,11 +71,17 @@ const Register: React.FC = () => {
         <div
           className={
             innerWidth < 968
-              ? 'loginWrapper w-[70%] h-[70%] flex flex-col mb-28'
-              : 'loginWrapper max-w-[1200px] w-[70%] h-[70%] flex'
+              ? 'loginWrapper w-[clamp(0,70%,400px)] h-[70%] flex flex-col mb-28'
+              : 'loginWrapper  w-[800px] h-[70%] flex'
           }
         >
-          <div className="loginleft flex-[1] flex flex-col justify-center mx-8">
+          <div
+            className={
+              innerWidth < 968
+                ? 'loginleft flex-[1] flex flex-col justify-center mr-0'
+                : 'loginleft flex-[1] flex flex-col justify-center mr-6'
+            }
+          >
             <h3
               onClick={() =>
                 innerWidth < 968
@@ -146,8 +152,11 @@ const Register: React.FC = () => {
                     <span className="loginForget text-[15px]">
                       ログインの方はこちら
                     </span>
-                    <button className={style.loginButton} onClick={() => navigate('/login')}>
-                      <span className="relative w-[100%] py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0" >
+                    <button
+                      className={style.loginButton}
+                      onClick={() => navigate('/login')}
+                    >
+                      <span className="relative w-[100%] py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
                         ログイン
                       </span>
                     </button>
@@ -164,7 +173,12 @@ const Register: React.FC = () => {
                     <span className="loginForget text-[15px]">
                       ログインの方はこちら
                     </span>
-                    <button onClick={() => navigate('/login')} className={style.loginButton2}>ログイン</button>
+                    <button
+                      onClick={() => navigate('/login')}
+                      className={style.loginButton2}
+                    >
+                      ログイン
+                    </button>
                   </>
                 )}
               </form>

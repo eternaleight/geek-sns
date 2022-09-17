@@ -3,14 +3,14 @@ import { ScrollContext } from '../utils/scroll-observer'
 import { SizeContext } from '../utils/size-observer'
 import { loginCall } from '../state/ActionCalls'
 import { AuthContext } from '../state/AuthContext'
-import {useNavigate} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 const Login: React.FC = () => {
   const { innerWidth } = useContext(SizeContext)
   const { scrollY } = useContext(ScrollContext)
   const email = useRef<HTMLInputElement>(null)
   const password = useRef<HTMLInputElement>(null)
-  const { user, isFetching, error, dispatch } = useContext<any>(AuthContext)
+  const { dispatch } = useContext<any>(AuthContext)
   const navigate = useNavigate()
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -25,7 +25,7 @@ const Login: React.FC = () => {
   }
 
   const login = () => {
-    if (innerWidth < 768) {
+    if (innerWidth < 968) {
       scrollY < 160 ? window.scrollTo(0, 660) : null //eslint-disable-line
     } else {
       scrollY < 160 ? window.scrollTo(0, 960) : null //eslint-disable-line
@@ -45,20 +45,26 @@ const Login: React.FC = () => {
           backgroundColor: `#1d1f26`,
         }}
         className={
-          'z-[100] top-0 login w-[100vw] mx-auto h-[100vh] flex items-center justify-center'
+          'z-[100] top-0 login w-[100vw] mx-auto h-screen flex items-center justify-center'
         }
       >
         <div
           className={
-            innerWidth < 768
-              ? 'loginWrapper w-[70%] h-[70%] flex flex-col mb-28'
-              : 'loginWrapper max-w-[1200px] w-[70%] h-[70%] flex'
+            innerWidth < 968
+              ? 'loginWrapper w-[clamp(343px,70%,340px)] h-[70%] flex flex-col mb-28'
+              : 'loginWrapper  w-[800px] h-[70%] flex'
           }
         >
-          <div className="loginleft flex-[1] flex flex-col justify-center">
+          <div
+            className={
+              innerWidth < 968
+                ? 'loginleft flex-[1] flex flex-col justify-center mr-0'
+                : 'loginleft flex-[1] flex flex-col justify-center mr-6'
+            }
+          >
             <h3
               onClick={() =>
-                innerWidth < 768
+                innerWidth < 968
                   ? window.scrollTo(0, 660)
                   : window.scrollTo(0, 960)
               }
@@ -97,7 +103,7 @@ const Login: React.FC = () => {
                 brilliant ✨
                 <br />
                 hacker community !! 💎
-                {innerWidth < 768 ? (
+                {innerWidth < 968 ? (
                   <>
                     <button
                       onClick={() => login()}
@@ -108,9 +114,12 @@ const Login: React.FC = () => {
                       </span>
                     </button>
                     <span className="loginForget text-[15px]">
-                      パスワード忘れた方へ
+                      新規登録の方はこちら
                     </span>
-                    <button className={style.loginButton} onClick={() => navigate('/')}>
+                    <button
+                      className={style.loginButton}
+                      onClick={() => navigate('/')}
+                    >
                       <span className="relative w-[100%] py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
                         アカウント作成
                       </span>
@@ -127,7 +136,10 @@ const Login: React.FC = () => {
                     <span className="loginForget text-[15px]">
                       パスワード忘れた方へ
                     </span>
-                    <button className={style.loginButton2} onClick={() => navigate('/')}>
+                    <button
+                      className={style.loginButton2}
+                      onClick={() => navigate('/')}
+                    >
                       アカウント作成
                     </button>
                   </>
