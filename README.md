@@ -1,20 +1,27 @@
-# Geek-SNS
+# Geek-SNS (under development)
 
 ![179329481-773cf639-715a-42d7-b267-d6986fa837ee](https://user-images.githubusercontent.com/96198088/182798161-b95d1d23-b3cf-42c0-923b-761372948c16.jpeg)
 
-- [cors](https://www.npmjs.com/package/cors) - CORS is a node.js package for providing a Connect/Express middleware that can be used to enable CORS with various options.
-- [dotenv](https://www.npmjs.com/package/dotenv) - Dotenv is a zero-dependency module that loads environment variables from a .env file into process.env. Storing configuration in the environment separate from code is based on The Twelve-Factor App methodology.
-- [nodemon](https://www.npmjs.com/package/nodemon) - nodemon is a tool that helps develop Node.js based applications by automatically restarting the node application when file changes in the directory are detected.
-- [express](https://expressjs.com/) - Robust routing
+## Stack
+
+- [CORS](https://github.com/expressjs/cors#readme) - CORS is a node.js package for providing a Connect/Express middleware that can be used to enable CORS with various options.
+- [Dotenv](https://github.com/motdotla/dotenv#readme) - Dotenv is a zero-dependency module that loads environment variables from a .env file into process.env.
+- [Nodemon](https://github.com/remy/nodemon) - nodemon is a tool that helps develop Node.js based applications by automatically restarting the node application when file changes in the directory are detected.
+- [Express](https://expressjs.com/) - Robust routing
 Focus on high performance
 Super-high test coverage
 HTTP helpers (redirection, caching, etc)
 View system supporting 14+ template engines
 Content negotiation
 Executable for generating applications quickly
-- [mongoose](https://mongoosejs.com/) - Mongoose provides a straight-forward, schema-based solution to model your application data. It includes built-in type casting, validation, query building, business logic hooks and more, out of the box.
-- [react.js](https://ja.reactjs.org/) - A JavaScript library for building user interfaces
-- [multer](https://www.npmjs.com/package/multer) - Multer is a node.js middleware for handling multipart/form-data, which is primarily used for uploading files. It is written on top of busboy for maximum efficiency.
+- [Mongoose](https://mongoosejs.com/) - Mongoose provides a straight-forward, schema-based solution to model your application data. It includes built-in type casting, validation, query building, business logic hooks and more, out of the box.
+- [React.js](https://ja.reactjs.org/) - A JavaScript library for building user interfaces
+- [Tailwind CSS](https://tailwindcss.com/) - Rapidly build modern websites without ever leaving your HTML.
+A utility-first CSS framework packed with classes like flex, pt-4, text-center and rotate-90 that can be composed to build any design, directly in your markup.
+- [Multer](https://github.com/expressjs/multer#readme) - Multer is a node.js middleware for handling multipart/form-data, which is primarily used for uploading files. It is written on top of busboy for maximum efficiency.
+- [MongoDB](https://www.mongodb.com/) - Get your ideas to market faster with a developer data platform built on the leading modern database. Support transactional, search, analytics, and mobile use cases while using a common query interface and the data model developers love.
+
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
