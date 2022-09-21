@@ -2,8 +2,6 @@
 
 ![179329481-773cf639-715a-42d7-b267-d6986fa837ee](https://user-images.githubusercontent.com/96198088/182798161-b95d1d23-b3cf-42c0-923b-761372948c16.jpeg)
 
-![Ziteboard (1)](https://user-images.githubusercontent.com/96198088/191462248-01ede4c7-6c81-433a-bedf-2124fde4a045.png)
-
 - [cors](https://www.npmjs.com/package/cors) - CORS is a node.js package for providing a Connect/Express middleware that can be used to enable CORS with various options.
 - [dotenv](https://www.npmjs.com/package/dotenv) - Dotenv is a zero-dependency module that loads environment variables from a .env file into process.env. Storing configuration in the environment separate from code is based on The Twelve-Factor App methodology.
 - [nodemon](https://www.npmjs.com/package/nodemon) - nodemon is a tool that helps develop Node.js based applications by automatically restarting the node application when file changes in the directory are detected.
