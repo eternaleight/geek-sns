@@ -17,7 +17,8 @@ module.exports = {
       },
       fontFamily: {
         noto: ["Noto Sans JP"],
-        dancing: ["Dancing Script"],
+        rubic: ["Rubic"],
+        inter: ["Inter"],
         alliance : ["alliance-black"],
       },
     },
