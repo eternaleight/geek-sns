@@ -30,17 +30,17 @@ const apiInitial = [
 
 type Api = typeof apiInitial
 
-type PostsArray = {
-  _id: number
-  desc?: string
-  photo?: string
-  date: string
-  userId: number
-  likes?: string[]
-  comment: number
-  img?: string
-  createdAt: string
-}
+// type PostsArray = {
+//   _id: number
+//   desc?: string
+//   photo?: string
+//   date: string
+//   userId: number
+//   likes?: string[]
+//   comment: number
+//   img?: string
+//   createdAt: string
+// }
 
 type Props = {
   username?: string

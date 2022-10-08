@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useContext } from 'react'
 import './App.scss'
 import Home from './pages/Home'
 import Profile from './pages/Profile'
@@ -8,12 +8,12 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { AuthContext } from './state/AuthContext'
 
 const App: React.FC = () => {
-  const [button, setButton] = useState<boolean>(false)
+  // const [button, setButton] = useState<boolean>(false)
   const { user } = useContext(AuthContext)
 
-  const Button = () => {
-    setButton(!button)
-  }
+  // const Button = () => {
+  //   setButton(!button)
+  // }
   return (
     <BrowserRouter>
       <Routes>
@@ -28,5 +28,6 @@ const App: React.FC = () => {
     </BrowserRouter>
   )
 }
+
 
 export default App

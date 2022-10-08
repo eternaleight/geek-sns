@@ -12,19 +12,19 @@ const style = {
   promotionTitleImg: `duration-500 card w-[300px] h-[250px] rounded-[10px] object-cover cursor-pointer my-[25px]`,
 }
 
-type User = {
-  _id: string
-  username: string
-  email: string
-  password: string
-  followers: string
-  followings: string
-  isAdmin: boolean
-  createdAt: string
-  updatedAt: string
-  __v: number
-  desc?: string
-}
+// type User = {
+//   _id: string
+//   username: string
+//   email: string
+//   password: string
+//   followers: string
+//   followings: string
+//   isAdmin: boolean
+//   createdAt: string
+//   updatedAt: string
+//   __v: number
+//   desc?: string
+// }
 
 const Rightbar = ({ user }:any) => {
   const HomeRightBar = () => {

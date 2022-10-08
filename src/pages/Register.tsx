@@ -35,10 +35,10 @@ const Register: React.FC = () => {
         console.log(err)
       }
     }
-    console.log(username.current?.value)
-    console.log(email.current?.value)
-    console.log(password.current?.value)
-    console.log(passwordConfirmation.current?.value)
+    // console.log(username.current?.value)
+    // console.log(email.current?.value)
+    // console.log(password.current?.value)
+    // console.log(passwordConfirmation.current?.value)
   }
 
   const login = () => {

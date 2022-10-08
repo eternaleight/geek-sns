@@ -8,8 +8,8 @@ import {
 } from '@mui/icons-material'
 import CloseFriend from './CloseFriend'
 import { Users } from '../posts/postdata'
-import { Link, useNavigate } from 'react-router-dom'
-import { useParams } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+// import { useParams } from 'react-router-dom'
 import { AuthContext } from '../state/AuthContext'
 import {useContext} from 'react'
 
@@ -31,8 +31,8 @@ const style = {
 const Sidebar: React.FC = () => {
 
   const { user } = useContext<any>(AuthContext)
-  const username = useParams().username
-  const navigate = useNavigate()
+  // const username = useParams().username
+  // const navigate = useNavigate()
 
   return (
     <div className="flex-[2.5] h-screen max-sm:hidden">
