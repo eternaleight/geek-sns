@@ -22,7 +22,7 @@ type UserType = {
 const style = {
   sidebarWrapper: `p-[20px]`,
   sidebarList: ``,
-  sidebarListItem: `bg-[#00000000] hover:bg-[#eef] border-[0.9px] hover:border-[0.9px] border-zinc-400 flex w-[10rem] items-center mb-[10px] px-[6px] py-[4px] cursor-pointer  hover:shadow-none  hover:rounded-[0px] hover:border-zinc-400 duration-[.15s] Btn `,
+  sidebarListItem: `bg-[#1e2028] border-[0.9px] hover:border-[0.9px] border-zinc-400 flex w-[10rem] items-center mb-[10px] px-[6px] py-[4px] cursor-pointer  hover:shadow-none  hover:rounded-[0px] hover:border-zinc-400 duration-[.15s] Btn `,
   sidebarListIcon: `absolute left-[5px]`,
   sidebarListText: `ml-7 Btn-Text`,
   transparent: `Btn-Text content-[""] after:bg-transparent after:w-[100%]`,

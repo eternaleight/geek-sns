@@ -100,7 +100,7 @@ const Post: React.FC<Props> = ({ post }) => {
   }
 
   return (
-    <div className="post w-full border-[0.9px] h-full shadow-[3px_7px_13px_-22px] rounded-[10px] mb-1">
+    <div className="post w-full border-[0.9px] h-full shadow-[3px_7px_13px_-22px] rounded-[10px] mb-1 border-gray-500 ">
       <div className="postWrapper p-[10px]">
         <div className="flex justify-center justify-between postTop">
           <div className="flex items-center postTopLeft">
