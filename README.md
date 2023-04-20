@@ -30,14 +30,14 @@ MUI offers a comprehensive suite of UI tools to help you ship new features faste
 ## Project structure
 ```
 PROJECT_ROOT
-├── public         # Static files
-│   └── assets     # Image files
-└── src            # Main react dir
-    ├── components # React component files
-    ├── pages      # Page files
-    ├── posts      # Post management
-    ├── state      # Authentication state
-    ├── styles     # Scss partial
-    └── utils      # Observer features
+├── public           # Static files
+│   └── assets       # Image files
+└── src              # Main react dir
+    ├── components   # React component files
+    ├── pages        # Page files
+    ├── posts        # Post management
+    ├── state        # Authentication state
+    ├── styles       # Scss partial
+    └── utils        # Observer features
 ```
 
