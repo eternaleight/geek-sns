@@ -1,5 +1,5 @@
 # Geek-SNS
-
+(under development)
 #### Backend
 https://github.com/eternaleight/sns-backend
 
